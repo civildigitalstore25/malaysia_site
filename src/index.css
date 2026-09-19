@@ -73,6 +73,38 @@
   border: 1px solid #C99B3B !important;
 }
 
+.custom-gold-marker {
+  background: transparent !important;
+  border: none !important;
+}
+
+.custom-gold-marker .map-marker {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  transition: transform 0.25s ease;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.35));
+}
+
+.custom-gold-marker.is-selected .map-marker {
+  transform: translateY(-4px) scale(1.08);
+  filter: drop-shadow(0 0 10px rgba(201, 155, 59, 0.85))
+    drop-shadow(0 4px 8px rgba(0, 0, 0, 0.45));
+  animation: marker-bounce 0.55s ease;
+}
+
+@keyframes marker-bounce {
+  0% {
+    transform: translateY(0) scale(0.9);
+  }
+  45% {
+    transform: translateY(-10px) scale(1.15);
+  }
+  100% {
+    transform: translateY(-4px) scale(1.08);
+  }
+}
+
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
   width: 8px;

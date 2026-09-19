@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import type { Branch } from '../types';
 import { MapPin, ExternalLink, Phone, Clock, AlertCircle } from 'lucide-react';
 
@@ -6,17 +7,24 @@ interface BranchCardProps {
   branch: Branch;
   isSelected: boolean;
   onSelect: (branch: Branch) => void;
+  index?: number;
 }
 
 export const BranchCard: React.FC<BranchCardProps> = ({
   branch,
   isSelected,
   onSelect,
+  index = 0,
 }) => {
   return (
-    <div
+    <motion.div
+      initial={{ opacity: 0, y: 16 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{ duration: 0.4, delay: index * 0.06, ease: 'easeOut' }}
+      whileHover={{ y: -2 }}
       onClick={() => onSelect(branch)}
-      className={`cursor-pointer transition-all duration-300 p-5 border rounded-none ${
+      className={`cursor-pointer transition-colors duration-300 p-5 border rounded-none ${
         isSelected
           ? 'bg-[#084C3B] border-[#C99B3B] shadow-xl ring-1 ring-[#C99B3B]'
           : 'bg-[#063F31]/90 border-[#C99B3B]/30 hover:border-[#C99B3B]/60 hover:bg-[#084C3B]/60'
@@ -31,10 +39,15 @@ export const BranchCard: React.FC<BranchCardProps> = ({
             {branch.name}
           </h3>
         </div>
-        {branch.isConfirmed ? (
+        {isSelected ? (
           <span className="inline-flex items-center space-x-1 text-[10px] font-bold text-[#063F31] bg-[#C99B3B] px-2 py-0.5 uppercase tracking-wider">
             <MapPin className="w-3 h-3" />
             <span>ACTIVE</span>
+          </span>
+        ) : branch.isConfirmed ? (
+          <span className="inline-flex items-center space-x-1 text-[10px] font-bold text-[#F8F5EC]/70 bg-[#151515]/60 border border-[#C99B3B]/20 px-2 py-0.5 uppercase tracking-wider">
+            <MapPin className="w-3 h-3 text-[#C99B3B]" />
+            <span>OPEN</span>
           </span>
         ) : (
           <span className="inline-flex items-center space-x-1 text-[10px] font-bold text-[#F8F5EC]/70 bg-[#151515]/60 border border-[#C99B3B]/20 px-2 py-0.5 uppercase tracking-wider">
@@ -44,7 +57,6 @@ export const BranchCard: React.FC<BranchCardProps> = ({
         )}
       </div>
 
-      {/* Image or Placeholder */}
       <div className="relative w-full h-32 mb-3 bg-[#042E24] border border-[#C99B3B]/20 overflow-hidden">
         {branch.image ? (
           <img
@@ -60,7 +72,6 @@ export const BranchCard: React.FC<BranchCardProps> = ({
         )}
       </div>
 
-      {/* Branch Information */}
       <div className="space-y-1.5 text-xs text-[#F8F5EC]/80 mb-4">
         <div className="flex items-start space-x-2">
           <MapPin className="w-3.5 h-3.5 text-[#C99B3B] shrink-0 mt-0.5" />
@@ -88,7 +99,6 @@ export const BranchCard: React.FC<BranchCardProps> = ({
         )}
       </div>
 
-      {/* Action Button */}
       {branch.isConfirmed && branch.googleMapsUrl && branch.googleMapsUrl !== '#' ? (
         <a
           href={branch.googleMapsUrl}
@@ -108,6 +118,6 @@ export const BranchCard: React.FC<BranchCardProps> = ({
           LOCATION DETAILS COMING SOON
         </button>
       )}
-    </div>
+    </motion.div>
   );
 };

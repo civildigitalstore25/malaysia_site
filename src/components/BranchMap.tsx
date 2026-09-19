@@ -1,23 +1,38 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { MapContainer, TileLayer, Marker, Popup, useMap } from 'react-leaflet';
 import L from 'leaflet';
 import type { Branch } from '../types';
 import { MapPin, ExternalLink } from 'lucide-react';
 
-// Custom Gold Marker Icon for Leaflet
-const createGoldIcon = () => {
+const createMarkerIcon = (isSelected: boolean) => {
+  const size = isSelected ? 40 : 28;
+  const height = isSelected ? 58 : 42;
+  const fill = isSelected ? '#C99B3B' : '#063F31';
+  const stroke = isSelected ? '#F8F5EC' : '#C99B3B';
+  const inner = isSelected ? '#063F31' : '#C99B3B';
+  const pulse = isSelected
+    ? `<circle cx="12" cy="12" r="10" fill="none" stroke="#C99B3B" stroke-width="1.5" opacity="0.9">
+         <animate attributeName="r" from="8" to="16" dur="1.4s" repeatCount="indefinite"/>
+         <animate attributeName="opacity" from="0.8" to="0" dur="1.4s" repeatCount="indefinite"/>
+       </circle>`
+    : '';
+
   const svg = `
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 36" width="28" height="42">
-      <path d="M12 0C5.37 0 0 5.37 0 12c0 9 12 24 12 24s12-15 12-24c0-6.63-5.37-12-12-12z" fill="#063F31" stroke="#C99B3B" stroke-width="2"/>
-      <circle cx="12" cy="12" r="5" fill="#C99B3B"/>
-    </svg>
+    <div class="map-marker ${isSelected ? 'map-marker--active' : ''}">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 36" width="${size}" height="${height}">
+        ${pulse}
+        <path d="M12 0C5.37 0 0 5.37 0 12c0 9 12 24 12 24s12-15 12-24c0-6.63-5.37-12-12-12z" fill="${fill}" stroke="${stroke}" stroke-width="2"/>
+        <circle cx="12" cy="12" r="5" fill="${inner}"/>
+      </svg>
+    </div>
   `;
+
   return L.divIcon({
-    className: 'custom-gold-marker',
+    className: `custom-gold-marker ${isSelected ? 'is-selected' : ''}`,
     html: svg,
-    iconSize: [28, 42],
-    iconAnchor: [14, 42],
-    popupAnchor: [0, -38],
+    iconSize: [size, height],
+    iconAnchor: [size / 2, height],
+    popupAnchor: [0, -height + 4],
   });
 };
 
@@ -27,19 +42,76 @@ interface BranchMapProps {
   onSelectBranch: (branch: Branch) => void;
 }
 
-// Helper component to smoothly animate map center to selected branch
 const MapController: React.FC<{ selectedBranch: Branch | null }> = ({ selectedBranch }) => {
   const map = useMap();
 
   useEffect(() => {
-    if (selectedBranch && selectedBranch.coordinates) {
-      map.flyTo(selectedBranch.coordinates, 12, {
-        duration: 1.5,
+    if (selectedBranch?.coordinates) {
+      map.flyTo(selectedBranch.coordinates, 13, {
+        duration: 1.2,
       });
     }
   }, [selectedBranch, map]);
 
   return null;
+};
+
+const BranchMarker: React.FC<{
+  branch: Branch;
+  isSelected: boolean;
+  onSelect: (branch: Branch) => void;
+}> = ({ branch, isSelected, onSelect }) => {
+  const markerRef = useRef<L.Marker | null>(null);
+
+  useEffect(() => {
+    const marker = markerRef.current;
+    if (!marker) return;
+
+    marker.setIcon(createMarkerIcon(isSelected));
+
+    if (isSelected) {
+      marker.setZIndexOffset(1000);
+      marker.openPopup();
+    } else {
+      marker.setZIndexOffset(0);
+      marker.closePopup();
+    }
+  }, [isSelected]);
+
+  if (!branch.coordinates) return null;
+
+  return (
+    <Marker
+      ref={markerRef}
+      position={branch.coordinates}
+      icon={createMarkerIcon(isSelected)}
+      eventHandlers={{
+        click: () => onSelect(branch),
+      }}
+    >
+      <Popup>
+        <div className="p-1 max-w-[220px]">
+          <h4 className="font-serif font-bold text-sm text-[#C99B3B] mb-1">
+            {branch.name}
+          </h4>
+          <p className="text-xs text-[#F8F5EC]/90 mb-2 leading-tight">
+            {branch.address}
+          </p>
+          {branch.googleMapsUrl && branch.googleMapsUrl !== '#' && (
+            <a
+              href={branch.googleMapsUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center space-x-1 text-[10px] font-bold tracking-wider text-[#C99B3B] uppercase hover:underline"
+            >
+              <span>Get Directions</span>
+              <ExternalLink className="w-3 h-3" />
+            </a>
+          )}
+        </div>
+      </Popup>
+    </Marker>
+  );
 };
 
 export const BranchMap: React.FC<BranchMapProps> = ({
@@ -48,9 +120,7 @@ export const BranchMap: React.FC<BranchMapProps> = ({
   onSelectBranch,
 }) => {
   const initialCenter: [number, number] =
-    selectedBranch && selectedBranch.coordinates
-      ? selectedBranch.coordinates
-      : [6.207603, 116.2500]; // Tuaran default
+    selectedBranch?.coordinates ?? [6.207603, 116.25];
 
   const activeBranches = branches.filter((b) => b.coordinates !== null);
 
@@ -69,46 +139,16 @@ export const BranchMap: React.FC<BranchMapProps> = ({
 
         <MapController selectedBranch={selectedBranch} />
 
-        {activeBranches.map((branch) => {
-          if (!branch.coordinates) return null;
-
-          return (
-            <Marker
-              key={branch.id}
-              position={branch.coordinates}
-              icon={createGoldIcon()}
-              eventHandlers={{
-                click: () => onSelectBranch(branch),
-              }}
-            >
-
-              <Popup>
-                <div className="p-1 max-w-[220px]">
-                  <h4 className="font-serif font-bold text-sm text-[#C99B3B] mb-1">
-                    {branch.name}
-                  </h4>
-                  <p className="text-xs text-[#F8F5EC]/90 mb-2 leading-tight">
-                    {branch.address}
-                  </p>
-                  {branch.googleMapsUrl && branch.googleMapsUrl !== '#' && (
-                    <a
-                      href={branch.googleMapsUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center space-x-1 text-[10px] font-bold tracking-wider text-[#C99B3B] uppercase hover:underline"
-                    >
-                      <span>Get Directions</span>
-                      <ExternalLink className="w-3 h-3" />
-                    </a>
-                  )}
-                </div>
-              </Popup>
-            </Marker>
-          );
-        })}
+        {activeBranches.map((branch) => (
+          <BranchMarker
+            key={branch.id}
+            branch={branch}
+            isSelected={selectedBranch?.id === branch.id}
+            onSelect={onSelectBranch}
+          />
+        ))}
       </MapContainer>
 
-      {/* Map Decorative Overlay Header */}
       <div className="absolute top-4 left-4 z-[400] bg-[#063F31]/90 backdrop-blur-md px-3.5 py-1.5 border border-[#C99B3B]/40 flex items-center space-x-2">
         <MapPin className="w-3.5 h-3.5 text-[#C99B3B]" />
         <span className="text-[10px] font-bold tracking-widest text-[#F8F5EC] uppercase">

@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import { Phone, User, Calendar, Store, ArrowRight } from 'lucide-react';
 
 export const Contact: React.FC = () => {
@@ -41,9 +42,13 @@ export const Contact: React.FC = () => {
   return (
     <section id="contact" className="py-20 lg:py-28 bg-[#F4EDDD] text-[#151515] relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.6, ease: 'easeOut' }}
+          className="text-center max-w-3xl mx-auto mb-16"
+        >
           <span className="text-[11px] font-bold tracking-[0.25em] text-[#084C3B] uppercase">
             GET IN TOUCH
           </span>
@@ -54,15 +59,19 @@ export const Contact: React.FC = () => {
             We welcome you and your family to experience authentic Malaysian dining at our restaurant locations.
           </p>
           <div className="w-16 h-0.5 bg-[#C99B3B] mx-auto mt-4"></div>
-        </div>
+        </motion.div>
 
-        {/* 4 Info Blocks */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
           {infoBlocks.map((block, idx) => {
             const Icon = block.icon;
             return (
-              <div
+              <motion.div
                 key={idx}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ duration: 0.45, delay: idx * 0.08, ease: 'easeOut' }}
+                whileHover={{ y: -4 }}
                 className="bg-[#F8F5EC] p-6 border border-[#C99B3B]/30 hover:border-[#084C3B] transition-colors flex flex-col justify-between"
               >
                 <div>
@@ -88,13 +97,18 @@ export const Contact: React.FC = () => {
                 <p className="text-xs text-[#151515]/65 mt-3 pt-3 border-t border-[#C99B3B]/15">
                   {block.sub}
                 </p>
-              </div>
+              </motion.div>
             );
           })}
         </div>
 
-        {/* CTA Banner */}
-        <div className="bg-[#063F31] border border-[#C99B3B] p-8 sm:p-12 text-[#F8F5EC] flex flex-col md:flex-row items-center justify-between gap-6 shadow-2xl">
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.6, ease: 'easeOut' }}
+          className="bg-[#063F31] border border-[#C99B3B] p-8 sm:p-12 text-[#F8F5EC] flex flex-col md:flex-row items-center justify-between gap-6 shadow-2xl"
+        >
           <div className="space-y-2 text-center md:text-left">
             <span className="text-xs font-bold tracking-widest text-[#C99B3B] uppercase">
               VISIT OUR RESTAURANTS
@@ -114,8 +128,7 @@ export const Contact: React.FC = () => {
             <span>FIND OUR LOCATIONS</span>
             <ArrowRight className="w-4 h-4" />
           </button>
-        </div>
-
+        </motion.div>
       </div>
     </section>
   );
