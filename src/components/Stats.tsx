@@ -26,7 +26,7 @@ export const Stats: React.FC = () => {
           <h2 className="font-serif text-3xl sm:text-4xl font-bold text-[#063F31] mt-2 mb-3">
             Heritage & Dedication
           </h2>
-          <p className="text-sm sm:text-base text-[#151515]/75 leading-relaxed">
+          <p className="text-sm sm:text-base text-readable-on-light leading-relaxed">
             A Sabah restaurant built on Malaysian culinary heritage — from Taman Satriya in 2011 to five branches today.
           </p>
           <div className="w-16 h-0.5 bg-[#C99B3B] mx-auto mt-4"></div>
@@ -52,7 +52,7 @@ export const Stats: React.FC = () => {
               <div className="text-xs font-bold tracking-widest text-[#C99B3B] uppercase mb-2 relative z-[1]">
                 {stat.label}
               </div>
-              <p className="text-xs text-[#151515]/70 relative z-[1]">{stat.sub}</p>
+              <p className="text-sm text-readable-on-light relative z-[1]">{stat.sub}</p>
             </motion.div>
           ))}
         </motion.div>

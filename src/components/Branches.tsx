@@ -26,7 +26,7 @@ export const Branches: React.FC = () => {
           <h2 className="font-serif text-4xl sm:text-5xl font-bold text-[#F8F5EC] mt-2 mb-4">
             Find Aasina Curry House
           </h2>
-          <p className="text-base text-[#F8F5EC]/75 leading-relaxed font-light">
+          <p className="text-base text-readable-on-dark leading-relaxed">
             Discover our five restaurant locations across Sabah — Menggatal, Kota Kinabalu, and Tuaran. Select a card to locate it on the map and get directions.
           </p>
           <div className="w-16 h-0.5 bg-[#C99B3B] mx-auto mt-4"></div>
@@ -62,7 +62,7 @@ export const Branches: React.FC = () => {
                 <Navigation className="w-3.5 h-3.5" />
                 <span>SELECT A RESTAURANT ({branches.length})</span>
               </span>
-              <span className="text-[10px] text-[#F8F5EC]/60 italic">
+              <span className="text-[10px] text-readable-on-dark italic">
                 Click card to locate
               </span>
             </motion.div>

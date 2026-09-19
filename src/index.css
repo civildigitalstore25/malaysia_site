@@ -21,7 +21,11 @@
     background-color: #063F31;
   }
 
-  h1, h2, h3, h4, .font-serif {
+  h1,
+  h2,
+  h3,
+  h4,
+  .font-serif {
     font-family: 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
   }
 }
@@ -54,6 +58,17 @@
 
 .text-gold {
   color: #C99B3B;
+}
+
+/* Readable body / subsection copy */
+.text-readable-on-dark {
+  color: rgba(248, 245, 236, 0.92);
+  font-weight: 400;
+}
+
+.text-readable-on-light {
+  color: rgba(32, 32, 32, 0.88);
+  font-weight: 400;
 }
 
 /* Custom Leaflet Map Container Tweaks */
@@ -98,9 +113,11 @@
   0% {
     transform: translateY(0) scale(0.9);
   }
+
   45% {
     transform: translateY(-10px) scale(1.15);
   }
+
   100% {
     transform: translateY(-4px) scale(1.08);
   }
@@ -110,13 +127,16 @@
 ::-webkit-scrollbar {
   width: 8px;
 }
+
 ::-webkit-scrollbar-track {
   background: #042E24;
 }
+
 ::-webkit-scrollbar-thumb {
   background: #084C3B;
   border: 1px solid rgba(201, 155, 59, 0.3);
 }
+
 ::-webkit-scrollbar-thumb:hover {
   background: #C99B3B;
 }
@@ -209,12 +229,10 @@
   position: absolute;
   inset: 0;
   z-index: 5;
-  background: linear-gradient(
-    115deg,
-    transparent 35%,
-    rgba(201, 155, 59, 0.08) 48%,
-    transparent 62%
-  );
+  background: linear-gradient(115deg,
+      transparent 35%,
+      rgba(201, 155, 59, 0.08) 48%,
+      transparent 62%);
   background-size: 220% 100%;
   background-position: 120% 0;
   opacity: 0;
@@ -231,6 +249,7 @@
 }
 
 @media (hover: none) {
+
   .card-hover:hover,
   .card-hover--media:hover,
   .card-hover--light:hover {

@@ -66,7 +66,7 @@ export const BranchCard: React.FC<BranchCardProps> = ({
         )}
       </div>
 
-      <div className="space-y-1.5 text-xs text-[#F8F5EC]/80 mb-4 relative z-[1]">
+      <div className="space-y-1.5 text-sm text-readable-on-dark mb-4 relative z-[1]">
         <div className="flex items-start space-x-2">
           <MapPin className="w-3.5 h-3.5 text-[#C99B3B] shrink-0 mt-0.5" />
           <span>{branch.address}</span>

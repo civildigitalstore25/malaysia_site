@@ -44,7 +44,7 @@ export const Lightbox: React.FC<LightboxProps> = ({
           <span className="text-[10px] font-bold tracking-[0.2em] text-[#C99B3B] uppercase block">
             INSIDE AASINA CURRY HOUSE
           </span>
-          <p className="text-xs text-[#F8F5EC]/70">
+          <p className="text-sm text-readable-on-dark">
             {currentIndex + 1} of {totalCount}
           </p>
         </div>
@@ -83,7 +83,7 @@ export const Lightbox: React.FC<LightboxProps> = ({
               <p className="font-serif text-base font-bold text-[#F8F5EC]">
                 {item.title}
               </p>
-              <p className="text-xs text-[#F8F5EC]/75 mt-0.5">
+              <p className="text-sm text-readable-on-dark mt-0.5">
                 {item.caption}
               </p>
             </div>

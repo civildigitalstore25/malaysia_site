@@ -120,7 +120,7 @@ export const BranchMap: React.FC<BranchMapProps> = ({
   onSelectBranch,
 }) => {
   const initialCenter: [number, number] =
-    selectedBranch?.coordinates ?? [6.1, 116.18];
+    selectedBranch?.coordinates ?? [6.0, 116.12];
 
   const activeBranches = branches.filter((b) => b.coordinates !== null);
 
@@ -128,7 +128,7 @@ export const BranchMap: React.FC<BranchMapProps> = ({
     <div className="relative w-full h-[400px] lg:h-full min-h-[400px] border border-[#C99B3B]/40 shadow-2xl overflow-hidden">
       <MapContainer
         center={initialCenter}
-        zoom={10}
+        zoom={11}
         scrollWheelZoom={false}
         className="w-full h-full"
       >

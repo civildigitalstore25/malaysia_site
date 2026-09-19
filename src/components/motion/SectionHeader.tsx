@@ -27,7 +27,7 @@ export function SectionHeader({
 }: SectionHeaderProps) {
   const eyebrowColor = tone === 'dark' ? 'text-[#084C3B]' : 'text-[#C99B3B]';
   const titleColor = tone === 'dark' ? 'text-[#063F31]' : 'text-[#F8F5EC]';
-  const descColor = tone === 'dark' ? 'text-[#151515]/75' : 'text-[#F8F5EC]/75';
+  const descColor = tone === 'dark' ? 'text-readable-on-light' : 'text-readable-on-dark';
   const alignCls = align === 'center' ? 'text-center mx-auto' : 'text-left';
 
   return (
@@ -48,7 +48,7 @@ export function SectionHeader({
         {title}
       </motion.h2>
       {description && (
-        <motion.p variants={fadeUp} className={`text-sm sm:text-base leading-relaxed font-light ${descColor}`}>
+        <motion.p variants={fadeUp} className={`text-sm sm:text-base leading-relaxed ${descColor}`}>
           {description}
         </motion.p>
       )}

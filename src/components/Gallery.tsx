@@ -38,7 +38,7 @@ export const Gallery: React.FC = () => {
           <h2 className="font-serif text-4xl sm:text-5xl font-bold text-[#F8F5EC] mt-2 mb-4">
             Inside Aasina Curry House
           </h2>
-          <p className="text-base text-[#F8F5EC]/75 leading-relaxed font-light">
+          <p className="text-base text-readable-on-dark leading-relaxed">
             A glimpse into our Sabah restaurants, food, and dining experience.
           </p>
           <div className="w-16 h-0.5 bg-[#C99B3B] mx-auto mt-4"></div>
@@ -57,11 +57,10 @@ export const Gallery: React.FC = () => {
               variants={swingIn}
               type="button"
               onClick={() => setActiveCategory(cat.id as typeof activeCategory)}
-              className={`px-4 py-2 text-xs font-bold tracking-widest uppercase transition-colors duration-300 border ${
-                activeCategory === cat.id
+              className={`px-4 py-2 text-xs font-bold tracking-widest uppercase transition-colors duration-300 border ${activeCategory === cat.id
                   ? 'bg-[#C99B3B] text-[#063F31] border-[#C99B3B]'
                   : 'bg-[#1A1510] text-[#F8F5EC]/80 border-[#C99B3B]/30 hover:border-[#C99B3B] hover:text-[#C99B3B]'
-              }`}
+                }`}
             >
               {cat.label}
             </motion.button>
@@ -101,7 +100,7 @@ export const Gallery: React.FC = () => {
                       {item.title}
                     </h3>
                     {item.caption && (
-                      <p className="text-xs text-[#F8F5EC]/80 mt-1 line-clamp-2">
+                      <p className="text-sm text-readable-on-dark mt-1 line-clamp-2">
                         {item.caption}
                       </p>
                     )}

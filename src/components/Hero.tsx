@@ -76,7 +76,7 @@ export const Hero: React.FC = () => {
 
             <motion.p
               variants={rise}
-              className="text-sm sm:text-base text-[#F8F5EC]/85 leading-relaxed max-w-xl font-light"
+              className="text-sm sm:text-base text-readable-on-dark leading-relaxed max-w-xl"
             >
               Established in 2011 by Syed Mohammad at Taman Satriya, Menggatal, Sabah. Aasina Curry House brings Malaysian restaurant heritage, diverse cuisine, and a welcoming family dining experience — call 016-8709786.
             </motion.p>

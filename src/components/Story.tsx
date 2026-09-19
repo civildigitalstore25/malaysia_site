@@ -54,11 +54,11 @@ export const Story: React.FC = () => {
               <span className="text-[#C99B3B] italic">Authentic Malaysian Taste</span>
             </motion.h2>
 
-            <motion.p variants={rise} className="text-base text-[#F8F5EC]/85 leading-relaxed font-light">
+            <motion.p variants={rise} className="text-base text-readable-on-dark leading-relaxed">
               In 2011, Syed Mohammad started the restaurant business at Taman Satriya, Menggatal, Sabah. From that first curry house, Aasina has grown into a trusted name for Malaysian dining, familiar local flavours, and meals made for everyday families.
             </motion.p>
 
-            <motion.p variants={rise} className="text-sm sm:text-base text-[#F8F5EC]/75 leading-relaxed font-light">
+            <motion.p variants={rise} className="text-sm sm:text-base text-readable-on-dark leading-relaxed">
               From crispy hand-crafted Roti Canai and fragrant Nasi Goreng to slow-simmered specialty curries, every plate reflects our dedication to consistency, warm hospitality, and community dining across Kota Kinabalu and Tuaran.
             </motion.p>
 

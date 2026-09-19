@@ -35,7 +35,7 @@ export const MenuHighlights: React.FC = () => {
           <h2 className="font-serif text-4xl sm:text-5xl font-bold text-[#F8F5EC] mt-2 mb-4">
             Selected Menu Highlights
           </h2>
-          <p className="text-base text-[#F8F5EC]/75 leading-relaxed font-light">
+          <p className="text-base text-readable-on-dark leading-relaxed">
             Signature dishes from our Sabah kitchens — roti, nasi goreng, specialty curries, and noodles.
           </p>
           <div className="w-16 h-0.5 bg-[#C99B3B] mx-auto mt-4"></div>
@@ -54,11 +54,10 @@ export const MenuHighlights: React.FC = () => {
               variants={dropIn}
               type="button"
               onClick={() => setActiveTab(tab.id as typeof activeTab)}
-              className={`px-4 py-2 text-xs font-bold tracking-widest uppercase transition-colors duration-300 border ${
-                activeTab === tab.id
-                  ? 'bg-[#C99B3B] text-[#063F31] border-[#C99B3B]'
-                  : 'bg-[#084C3B]/60 text-[#F8F5EC]/80 border-[#C99B3B]/30 hover:border-[#C99B3B] hover:text-[#C99B3B]'
-              }`}
+              className={`px-4 py-2 text-xs font-bold tracking-widest uppercase transition-colors duration-300 border ${activeTab === tab.id
+                ? 'bg-[#C99B3B] text-[#063F31] border-[#C99B3B]'
+                : 'bg-[#084C3B]/60 text-[#F8F5EC]/80 border-[#C99B3B]/30 hover:border-[#C99B3B] hover:text-[#C99B3B]'
+                }`}
             >
               {tab.label}
             </motion.button>
@@ -93,7 +92,7 @@ export const MenuHighlights: React.FC = () => {
                   <h3 className="font-serif text-xl font-bold text-[#F8F5EC] group-hover:text-[#C99B3B] transition-colors mb-2">
                     {item.name}
                   </h3>
-                  <p className="text-xs text-[#F8F5EC]/75 leading-relaxed font-light mb-4">
+                  <p className="text-sm text-readable-on-dark leading-relaxed mb-4">
                     {item.description}
                   </p>
                 </div>
@@ -112,7 +111,7 @@ export const MenuHighlights: React.FC = () => {
         </motion.div>
 
         <div className="text-center mt-12 pt-8 border-t border-[#C99B3B]/20">
-          <p className="text-xs text-[#F8F5EC]/60 italic">
+          <p className="text-xs text-readable-on-dark italic">
             * Visit our restaurant locations for full daily menu offerings and daily specials.
           </p>
         </div>

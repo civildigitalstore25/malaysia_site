@@ -68,7 +68,7 @@ export const Journey: React.FC = () => {
           <h2 className="font-serif text-4xl sm:text-5xl font-bold text-[#063F31] mt-2 mb-4">
             Our Journey
           </h2>
-          <p className="text-base text-[#151515]/75 leading-relaxed font-light">
+          <p className="text-base text-readable-on-light leading-relaxed">
             Founded in 2011 by Syed Mohammad in Taman Satriya, Menggatal — discover how Aasina Curry House has grown across Sabah.
           </p>
           <div className="w-16 h-0.5 bg-[#C99B3B] mx-auto mt-4"></div>
@@ -99,9 +99,8 @@ export const Journey: React.FC = () => {
                 <motion.div
                   key={idx}
                   variants={side}
-                  className={`flex flex-col sm:flex-row items-center ${
-                    isEven ? 'sm:flex-row-reverse' : ''
-                  }`}
+                  className={`flex flex-col sm:flex-row items-center ${isEven ? 'sm:flex-row-reverse' : ''
+                    }`}
                 >
                   <div className="w-full sm:w-1/2 px-4 sm:px-8 mb-6 sm:mb-0">
                     <div className="card-hover bg-[#F8F5EC] border border-[#C99B3B]/40 p-6 shadow-xl relative group">
@@ -121,7 +120,7 @@ export const Journey: React.FC = () => {
                         <p className="text-[11px] text-[#8A6A28] font-medium mb-2">
                           📍 {step.location}
                         </p>
-                        <p className="text-xs text-[#151515]/75 leading-relaxed font-light">
+                        <p className="text-sm text-readable-on-light leading-relaxed">
                           {step.description}
                         </p>
                       </div>

@@ -45,11 +45,11 @@ export const Footer: React.FC = () => {
               MAKANAN DAN MINUMAN ISLAM
             </p>
 
-            <p className="text-xs text-[#F8F5EC]/75 leading-relaxed font-light max-w-md">
+            <p className="text-sm text-readable-on-dark leading-relaxed max-w-md">
               Established 2011 by Syed Mohammad. Dedicated to serving traditional Malaysian restaurant heritage, hand-spun flatbreads, fragrant fried rice, and slow-cooked specialty curries.
             </p>
 
-            <div className="text-xs text-[#F8F5EC]/60">Malaysian Restaurant · Sabah, Malaysia</div>
+            <div className="text-sm text-readable-on-dark">Malaysian Restaurant · Sabah, Malaysia</div>
           </motion.div>
 
           <motion.div variants={fadeUp} className="lg:col-span-6 flex flex-col justify-between">

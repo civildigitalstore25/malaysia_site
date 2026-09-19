@@ -55,7 +55,7 @@ export const Contact: React.FC = () => {
           <h2 className="font-serif text-4xl sm:text-5xl font-bold text-[#063F31] mt-2 mb-4">
             Connect With Aasina Curry House
           </h2>
-          <p className="text-base text-[#151515]/75 leading-relaxed font-light">
+          <p className="text-base text-readable-on-light leading-relaxed">
             Visit our Sabah restaurants or call {businessContact.phone}. We welcome you and your family to experience authentic Malaysian dining.
           </p>
           <div className="w-16 h-0.5 bg-[#C99B3B] mx-auto mt-4"></div>
@@ -97,7 +97,7 @@ export const Contact: React.FC = () => {
                     </h3>
                   )}
                 </div>
-                <p className="text-xs text-[#151515]/65 mt-3 pt-3 border-t border-[#C99B3B]/15 relative z-[1]">
+                <p className="text-sm text-readable-on-light mt-3 pt-3 border-t border-[#C99B3B]/15 relative z-[1]">
                   {block.sub}
                 </p>
               </motion.div>
@@ -119,7 +119,7 @@ export const Contact: React.FC = () => {
             <h3 className="font-serif text-2xl sm:text-3xl font-bold">
               Looking for our restaurant address & directions?
             </h3>
-            <p className="text-xs sm:text-sm text-[#F8F5EC]/75 font-light max-w-xl">
+            <p className="text-sm text-readable-on-dark max-w-xl">
               Use our interactive map to find Aasina Curry House branches in Menggatal, Kota Kinabalu, and Tuaran — then open Google Maps for directions.
             </p>
           </div>

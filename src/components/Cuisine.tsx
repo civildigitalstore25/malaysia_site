@@ -20,7 +20,7 @@ export const Cuisine: React.FC = () => {
           <h2 className="font-serif text-4xl sm:text-5xl font-bold text-[#063F31] mt-2 mb-4">
             Our Culinary Identity
           </h2>
-          <p className="text-base text-[#151515]/75 leading-relaxed">
+          <p className="text-base text-readable-on-light leading-relaxed">
             A diverse menu rooted in Sabah Malaysian restaurant culture — roti, nasi goreng, curries, and noodles prepared with traditional techniques.
           </p>
           <div className="w-16 h-0.5 bg-[#C99B3B] mx-auto mt-4"></div>
@@ -59,7 +59,7 @@ export const Cuisine: React.FC = () => {
                 <h3 className="font-serif text-2xl font-bold text-[#F8F5EC] group-hover:text-[#C99B3B] transition-colors">
                   {cat.name}
                 </h3>
-                <p className="text-xs text-[#F8F5EC]/80 leading-relaxed font-light line-clamp-3">
+                <p className="text-sm text-readable-on-dark leading-relaxed line-clamp-3">
                   {cat.description}
                 </p>
                 <div className="pt-2 flex items-center text-xs font-bold tracking-widest text-[#C99B3B] uppercase group-hover:translate-x-1 transition-transform">
