@@ -1,4 +1,6 @@
 import React from 'react';
+import { motion } from 'framer-motion';
+import { fadeUp, staggerContainer, viewportOnce } from './motion';
 
 export const Footer: React.FC = () => {
   const navLinks = [
@@ -22,16 +24,18 @@ export const Footer: React.FC = () => {
 
   return (
     <footer className="bg-[#042E24] text-[#F8F5EC] border-t border-[#C99B3B]/30 pt-16 pb-12">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <motion.div
+        className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
+        variants={staggerContainer(0.1, 0.05)}
+        initial="hidden"
+        whileInView="show"
+        viewport={viewportOnce}
+      >
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 pb-12 border-b border-[#C99B3B]/20">
-          
-          {/* Left Brand Column */}
-          <div className="lg:col-span-6 space-y-4">
+          <motion.div variants={fadeUp} className="lg:col-span-6 space-y-4">
             <div className="flex items-center space-x-2">
-              <span className="font-serif text-3xl font-bold tracking-wider text-[#F8F5EC]">
-                AASINA
-              </span>
-              <span className="h-4 w-px bg-[#C99B3B]"></span>
+              <span className="font-serif text-3xl font-bold tracking-wider text-[#F8F5EC]">AASINA</span>
+              <span className="h-4 w-px bg-[#C99B3B]" />
               <span className="text-xs font-semibold tracking-widest text-[#C99B3B] uppercase">
                 CURRY HOUSE
               </span>
@@ -45,13 +49,10 @@ export const Footer: React.FC = () => {
               Established 2011 by Syed Mohammad. Dedicated to serving traditional Malaysian restaurant heritage, hand-spun flatbreads, fragrant fried rice, and slow-cooked specialty curries.
             </p>
 
-            <div className="text-xs text-[#F8F5EC]/60">
-              Malaysian Restaurant · Malaysia
-            </div>
-          </div>
+            <div className="text-xs text-[#F8F5EC]/60">Malaysian Restaurant · Malaysia</div>
+          </motion.div>
 
-          {/* Right Navigation Column */}
-          <div className="lg:col-span-6 flex flex-col justify-between">
+          <motion.div variants={fadeUp} className="lg:col-span-6 flex flex-col justify-between">
             <div>
               <span className="text-xs font-bold tracking-widest text-[#C99B3B] uppercase block mb-4">
                 QUICK NAVIGATION
@@ -78,19 +79,17 @@ export const Footer: React.FC = () => {
               <span>•</span>
               <span>Makan & Minuman Islam</span>
             </div>
-          </div>
-
+          </motion.div>
         </div>
 
-        {/* Bottom Copyright */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-[#F8F5EC]/60 gap-4">
+        <motion.div
+          variants={fadeUp}
+          className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-[#F8F5EC]/60 gap-4"
+        >
           <p>© 2026 Aasina Curry House. All rights reserved.</p>
-          <p className="italic text-[#C99B3B]/80 font-serif">
-            Heritage Taste. Growing with Malaysia.
-          </p>
-        </div>
-
-      </div>
+          <p className="italic text-[#C99B3B]/80 font-serif">Heritage Taste. Growing with Malaysia.</p>
+        </motion.div>
+      </motion.div>
     </footer>
   );
 };

@@ -17,7 +17,7 @@ function App() {
 
   useEffect(() => {
     const sections = document.querySelectorAll('section[id]');
-    
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {

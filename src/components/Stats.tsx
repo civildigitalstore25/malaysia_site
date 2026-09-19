@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { headerReveal, pop, staggerContainer } from './motion/variants';
 
 export const Stats: React.FC = () => {
   const stats = [
@@ -12,9 +13,13 @@ export const Stats: React.FC = () => {
   return (
     <section className="py-16 sm:py-20 bg-[#F4EDDD] text-[#151515] border-y border-[#C99B3B]/30 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-12">
+        <motion.div
+          className="text-center max-w-3xl mx-auto mb-12"
+          variants={headerReveal}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.35 }}
+        >
           <span className="text-[11px] font-bold tracking-[0.25em] text-[#084C3B] uppercase">
             BUSINESS AT A GLANCE
           </span>
@@ -25,32 +30,32 @@ export const Stats: React.FC = () => {
             A restaurant built on Malaysian culinary heritage and a commitment to serving memorable food.
           </p>
           <div className="w-16 h-0.5 bg-[#C99B3B] mx-auto mt-4"></div>
-        </div>
+        </motion.div>
 
-        {/* Stats Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+        <motion.div
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8"
+          variants={staggerContainer(0.12, 0.05)}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.2 }}
+        >
           {stats.map((stat, idx) => (
             <motion.div
               key={idx}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: idx * 0.1 }}
-              viewport={{ once: true }}
-              className="bg-[#F8F5EC] p-6 border border-[#C99B3B]/30 text-center shadow-sm hover:border-[#084C3B] transition-colors"
+              variants={pop}
+              className="card-hover--light bg-[#F8F5EC] p-6 border border-[#C99B3B]/30 text-center shadow-sm"
             >
-              <div className="font-serif text-3xl sm:text-4xl font-bold text-[#063F31] mb-1">
+              <span className="card-hover__shine" aria-hidden />
+              <div className="font-serif text-3xl sm:text-4xl font-bold text-[#063F31] mb-1 relative z-[1]">
                 {stat.number}
               </div>
-              <div className="text-xs font-bold tracking-widest text-[#C99B3B] uppercase mb-2">
+              <div className="text-xs font-bold tracking-widest text-[#C99B3B] uppercase mb-2 relative z-[1]">
                 {stat.label}
               </div>
-              <p className="text-xs text-[#151515]/70">
-                {stat.sub}
-              </p>
+              <p className="text-xs text-[#151515]/70 relative z-[1]">{stat.sub}</p>
             </motion.div>
           ))}
-        </div>
-
+        </motion.div>
       </div>
     </section>
   );

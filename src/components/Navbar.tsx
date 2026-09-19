@@ -46,7 +46,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? 'bg-[#063F31]/95 backdrop-blur-md shadow-lg border-b border-[#C99B3B]/20 py-3'
+          ? 'bg-[#063F31] shadow-lg border-b border-[#C99B3B]/20 py-3'
           : 'bg-gradient-to-b from-[#063F31]/90 to-transparent py-5'
       }`}
     >
@@ -128,7 +128,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
 
       {/* Mobile Drawer */}
       {isMobileMenuOpen && (
-        <div className="lg:hidden fixed inset-0 top-[60px] bg-[#063F31]/98 border-t border-[#C99B3B]/20 backdrop-blur-xl z-40 flex flex-col justify-between p-6 overflow-y-auto animate-in fade-in slide-in-from-top-4 duration-300">
+        <div className="lg:hidden fixed inset-0 top-[60px] bg-[#063F31] border-t border-[#C99B3B]/20 z-40 flex flex-col justify-between p-6 overflow-y-auto">
           <div className="flex flex-col space-y-4 pt-4">
             <div className="text-[10px] tracking-[0.25em] text-[#C99B3B] uppercase font-bold border-b border-[#C99B3B]/20 pb-2">
               Navigation

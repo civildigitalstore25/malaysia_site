@@ -1,13 +1,12 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Phone, User, Calendar, Store, ArrowRight } from 'lucide-react';
+import { cornerIn, headerReveal, lift, staggerContainer } from './motion/variants';
 
 export const Contact: React.FC = () => {
   const handleScrollToLocations = () => {
     const el = document.querySelector('#locations');
-    if (el) {
-      el.scrollIntoView({ behavior: 'smooth' });
-    }
+    if (el) el.scrollIntoView({ behavior: 'smooth' });
   };
 
   const infoBlocks = [
@@ -43,11 +42,11 @@ export const Contact: React.FC = () => {
     <section id="contact" className="py-20 lg:py-28 bg-[#F4EDDD] text-[#151515] relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.6, ease: 'easeOut' }}
           className="text-center max-w-3xl mx-auto mb-16"
+          variants={headerReveal}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.35 }}
         >
           <span className="text-[11px] font-bold tracking-[0.25em] text-[#084C3B] uppercase">
             GET IN TOUCH
@@ -61,20 +60,23 @@ export const Contact: React.FC = () => {
           <div className="w-16 h-0.5 bg-[#C99B3B] mx-auto mt-4"></div>
         </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+        <motion.div
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12"
+          variants={staggerContainer(0.1, 0.08)}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.2 }}
+        >
           {infoBlocks.map((block, idx) => {
             const Icon = block.icon;
             return (
               <motion.div
                 key={idx}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.2 }}
-                transition={{ duration: 0.45, delay: idx * 0.08, ease: 'easeOut' }}
-                whileHover={{ y: -4 }}
-                className="bg-[#F8F5EC] p-6 border border-[#C99B3B]/30 hover:border-[#084C3B] transition-colors flex flex-col justify-between"
+                variants={cornerIn}
+                className="card-hover--light bg-[#F8F5EC] p-6 border border-[#C99B3B]/30 flex flex-col justify-between"
               >
-                <div>
+                <span className="card-hover__shine" aria-hidden />
+                <div className="relative z-[1]">
                   <div className="w-10 h-10 bg-[#084C3B] text-[#C99B3B] flex items-center justify-center mb-4 border border-[#C99B3B]/30">
                     <Icon className="w-5 h-5" />
                   </div>
@@ -94,19 +96,19 @@ export const Contact: React.FC = () => {
                     </h3>
                   )}
                 </div>
-                <p className="text-xs text-[#151515]/65 mt-3 pt-3 border-t border-[#C99B3B]/15">
+                <p className="text-xs text-[#151515]/65 mt-3 pt-3 border-t border-[#C99B3B]/15 relative z-[1]">
                   {block.sub}
                 </p>
               </motion.div>
             );
           })}
-        </div>
+        </motion.div>
 
         <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          variants={lift}
+          initial="hidden"
+          whileInView="show"
           viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.6, ease: 'easeOut' }}
           className="bg-[#063F31] border border-[#C99B3B] p-8 sm:p-12 text-[#F8F5EC] flex flex-col md:flex-row items-center justify-between gap-6 shadow-2xl"
         >
           <div className="space-y-2 text-center md:text-left">
@@ -122,8 +124,9 @@ export const Contact: React.FC = () => {
           </div>
 
           <button
+            type="button"
             onClick={handleScrollToLocations}
-            className="px-8 py-4 bg-[#C99B3B] text-[#063F31] font-bold text-xs tracking-widest uppercase hover:bg-[#D4AF37] transition-all flex items-center justify-center space-x-2 shrink-0 shadow-lg"
+            className="px-8 py-4 bg-[#C99B3B] text-[#063F31] font-bold text-xs tracking-widest uppercase hover:bg-[#D4AF37] transition-colors flex items-center justify-center space-x-2 shrink-0 shadow-lg"
           >
             <span>FIND OUR LOCATIONS</span>
             <ArrowRight className="w-4 h-4" />

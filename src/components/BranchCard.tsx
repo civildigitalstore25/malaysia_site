@@ -1,5 +1,4 @@
 import React from 'react';
-import { motion } from 'framer-motion';
 import type { Branch } from '../types';
 import { MapPin, ExternalLink, Phone, Clock, AlertCircle } from 'lucide-react';
 
@@ -14,23 +13,18 @@ export const BranchCard: React.FC<BranchCardProps> = ({
   branch,
   isSelected,
   onSelect,
-  index = 0,
 }) => {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 16 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.2 }}
-      transition={{ duration: 0.4, delay: index * 0.06, ease: 'easeOut' }}
-      whileHover={{ y: -2 }}
+    <div
       onClick={() => onSelect(branch)}
-      className={`cursor-pointer transition-colors duration-300 p-5 border rounded-none ${
+      className={`card-hover cursor-pointer p-5 border rounded-none ${
         isSelected
           ? 'bg-[#084C3B] border-[#C99B3B] shadow-xl ring-1 ring-[#C99B3B]'
-          : 'bg-[#063F31]/90 border-[#C99B3B]/30 hover:border-[#C99B3B]/60 hover:bg-[#084C3B]/60'
+          : 'bg-[#063F31]/90 border-[#C99B3B]/30'
       }`}
     >
-      <div className="flex items-start justify-between mb-3">
+      <span className="card-hover__shine" aria-hidden />
+      <div className="flex items-start justify-between mb-3 relative z-[1]">
         <div>
           <span className="text-[10px] font-bold tracking-widest text-[#C99B3B] uppercase block">
             {branch.city}, {branch.state}
@@ -57,7 +51,7 @@ export const BranchCard: React.FC<BranchCardProps> = ({
         )}
       </div>
 
-      <div className="relative w-full h-32 mb-3 bg-[#042E24] border border-[#C99B3B]/20 overflow-hidden">
+      <div className="relative w-full h-32 mb-3 bg-[#042E24] border border-[#C99B3B]/20 overflow-hidden card-hover__media z-[1]">
         {branch.image ? (
           <img
             src={branch.image}
@@ -72,7 +66,7 @@ export const BranchCard: React.FC<BranchCardProps> = ({
         )}
       </div>
 
-      <div className="space-y-1.5 text-xs text-[#F8F5EC]/80 mb-4">
+      <div className="space-y-1.5 text-xs text-[#F8F5EC]/80 mb-4 relative z-[1]">
         <div className="flex items-start space-x-2">
           <MapPin className="w-3.5 h-3.5 text-[#C99B3B] shrink-0 mt-0.5" />
           <span>{branch.address}</span>
@@ -105,7 +99,7 @@ export const BranchCard: React.FC<BranchCardProps> = ({
           target="_blank"
           rel="noopener noreferrer"
           onClick={(e) => e.stopPropagation()}
-          className="w-full py-2.5 bg-[#C99B3B] text-[#063F31] font-bold text-[11px] tracking-widest uppercase hover:bg-[#D4AF37] transition-all flex items-center justify-center space-x-1.5"
+          className="w-full py-2.5 bg-[#C99B3B] text-[#063F31] font-bold text-[11px] tracking-widest uppercase hover:bg-[#D4AF37] transition-colors flex items-center justify-center space-x-1.5 relative z-[1]"
         >
           <span>GET DIRECTIONS</span>
           <ExternalLink className="w-3.5 h-3.5" />
@@ -118,6 +112,6 @@ export const BranchCard: React.FC<BranchCardProps> = ({
           LOCATION DETAILS COMING SOON
         </button>
       )}
-    </motion.div>
+    </div>
   );
 };

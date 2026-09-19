@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { menuItems } from '../data/menu';
 import { Star } from 'lucide-react';
+import { dropIn, headerReveal, staggerContainer, easeOut } from './motion/variants';
 
 export const MenuHighlights: React.FC = () => {
   const [activeTab, setActiveTab] = useState<'all' | 'roti' | 'nasi' | 'specialty' | 'noodles'>('all');
@@ -21,9 +22,13 @@ export const MenuHighlights: React.FC = () => {
   return (
     <section id="menu" className="py-20 lg:py-28 bg-[#063F31] bg-pattern-dark relative text-[#F8F5EC]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-12">
+        <motion.div
+          className="text-center max-w-3xl mx-auto mb-12"
+          variants={headerReveal}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.35 }}
+        >
           <span className="text-[11px] font-bold tracking-[0.25em] text-[#C99B3B] uppercase">
             SELECTED HIGHLIGHTS
           </span>
@@ -34,39 +39,46 @@ export const MenuHighlights: React.FC = () => {
             A selection of dishes representing the breadth of the Aasina Curry House menu.
           </p>
           <div className="w-16 h-0.5 bg-[#C99B3B] mx-auto mt-4"></div>
-        </div>
+        </motion.div>
 
-        {/* Filter Tabs */}
-        <div className="flex flex-wrap justify-center gap-2 sm:gap-3 mb-12">
+        <motion.div
+          className="flex flex-wrap justify-center gap-2 sm:gap-3 mb-12"
+          variants={staggerContainer(0.05, 0.1)}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true }}
+        >
           {tabs.map(tab => (
-            <button
+            <motion.button
               key={tab.id}
-              onClick={() => setActiveTab(tab.id as any)}
-              className={`px-4 py-2 text-xs font-bold tracking-widest uppercase transition-all duration-300 border ${
+              variants={dropIn}
+              type="button"
+              onClick={() => setActiveTab(tab.id as typeof activeTab)}
+              className={`px-4 py-2 text-xs font-bold tracking-widest uppercase transition-colors duration-300 border ${
                 activeTab === tab.id
                   ? 'bg-[#C99B3B] text-[#063F31] border-[#C99B3B]'
                   : 'bg-[#084C3B]/60 text-[#F8F5EC]/80 border-[#C99B3B]/30 hover:border-[#C99B3B] hover:text-[#C99B3B]'
               }`}
             >
               {tab.label}
-            </button>
+            </motion.button>
           ))}
-        </div>
+        </motion.div>
 
-        {/* Items Grid */}
         <motion.div layout className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <AnimatePresence>
-            {filteredItems.map(item => (
+          <AnimatePresence mode="popLayout">
+            {filteredItems.map((item, i) => (
               <motion.div
                 key={item.id}
                 layout
-                initial={{ opacity: 0, scale: 0.95 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.95 }}
-                transition={{ duration: 0.3 }}
-                className="bg-[#084C3B]/80 border border-[#C99B3B]/30 p-6 flex flex-col justify-between hover:border-[#C99B3B] transition-all group"
+                initial={{ opacity: 0, y: -24 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: 16 }}
+                transition={{ duration: 0.35, delay: i * 0.04, ease: easeOut }}
+                className="card-hover bg-[#084C3B]/80 border border-[#C99B3B]/30 p-6 flex flex-col justify-between group min-h-[200px]"
               >
-                <div>
+                <span className="card-hover__shine" aria-hidden />
+                <div className="relative z-[1]">
                   <div className="flex items-center justify-between mb-3">
                     <span className="text-[10px] font-bold tracking-widest text-[#C99B3B] uppercase bg-[#063F31] px-2.5 py-1 border border-[#C99B3B]/30">
                       {item.category.toUpperCase()}
@@ -78,18 +90,15 @@ export const MenuHighlights: React.FC = () => {
                       </span>
                     )}
                   </div>
-
                   <h3 className="font-serif text-xl font-bold text-[#F8F5EC] group-hover:text-[#C99B3B] transition-colors mb-2">
                     {item.name}
                   </h3>
-
                   <p className="text-xs text-[#F8F5EC]/75 leading-relaxed font-light mb-4">
                     {item.description}
                   </p>
                 </div>
-
                 {item.tags && item.tags.length > 0 && (
-                  <div className="pt-3 border-t border-[#C99B3B]/15 flex flex-wrap gap-1.5">
+                  <div className="pt-3 border-t border-[#C99B3B]/15 flex flex-wrap gap-1.5 relative z-[1]">
                     {item.tags.map((tag, idx) => (
                       <span key={idx} className="text-[10px] text-[#C99B3B]/90 font-medium">
                         • {tag}
@@ -102,13 +111,11 @@ export const MenuHighlights: React.FC = () => {
           </AnimatePresence>
         </motion.div>
 
-        {/* Footer Note */}
         <div className="text-center mt-12 pt-8 border-t border-[#C99B3B]/20">
           <p className="text-xs text-[#F8F5EC]/60 italic">
             * Visit our restaurant locations for full daily menu offerings and daily specials.
           </p>
         </div>
-
       </div>
     </section>
   );

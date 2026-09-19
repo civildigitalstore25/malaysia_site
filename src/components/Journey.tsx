@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Calendar, Store, Coffee, Compass, Award } from 'lucide-react';
+import { expand, headerReveal, staggerContainer, slideLeft, slideRight } from './motion/variants';
 
 export const Journey: React.FC = () => {
   const milestones = [
@@ -43,13 +44,16 @@ export const Journey: React.FC = () => {
 
   return (
     <section id="journey" className="py-20 lg:py-28 bg-[#084C3B] text-[#F8F5EC] relative overflow-hidden">
-      {/* Background Accent Lines */}
-      <div className="absolute inset-0 bg-pattern-dark opacity-40 pointer-events-none"></div>
+      <div className="absolute inset-0 bg-pattern-dark opacity-40 pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        
-        {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        <motion.div
+          className="text-center max-w-3xl mx-auto mb-16"
+          variants={headerReveal}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.35 }}
+        >
           <span className="text-[11px] font-bold tracking-[0.25em] text-[#C99B3B] uppercase">
             OUR TIMELINE & MILESTONES
           </span>
@@ -60,32 +64,41 @@ export const Journey: React.FC = () => {
             Founded in 2011 by Syed Mohammad in Taman Satriya, Menggatal, discover how Aasina Curry House has grown over the years.
           </p>
           <div className="w-16 h-0.5 bg-[#C99B3B] mx-auto mt-4"></div>
-        </div>
+        </motion.div>
 
-        {/* Timeline */}
         <div className="max-w-4xl mx-auto relative">
-          {/* Vertical Connecting Line */}
-          <div className="hidden sm:block absolute left-1/2 top-0 bottom-0 w-0.5 bg-[#C99B3B]/30 -translate-x-1/2"></div>
+          <motion.div
+            className="hidden sm:block absolute left-1/2 top-0 bottom-0 w-0.5 bg-[#C99B3B]/30 -translate-x-1/2 origin-top"
+            initial={{ scaleY: 0 }}
+            whileInView={{ scaleY: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
+          />
 
-          <div className="space-y-12 sm:space-y-14">
+          <motion.div
+            className="space-y-12 sm:space-y-14"
+            variants={staggerContainer(0.15, 0.1)}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, amount: 0.1 }}
+          >
             {milestones.map((step, idx) => {
               const Icon = step.icon;
               const isEven = idx % 2 === 0;
+              const side = isEven ? slideLeft : slideRight;
 
               return (
                 <motion.div
                   key={idx}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: idx * 0.15 }}
-                  viewport={{ once: true }}
+                  variants={side}
                   className={`flex flex-col sm:flex-row items-center ${
                     isEven ? 'sm:flex-row-reverse' : ''
                   }`}
                 >
-                  {/* Content Box */}
                   <div className="w-full sm:w-1/2 px-4 sm:px-8 mb-6 sm:mb-0">
-                    <div className="bg-[#063F31] border border-[#C99B3B]/40 p-6 shadow-xl relative group hover:border-[#C99B3B] transition-colors">
+                    <div className="card-hover bg-[#063F31] border border-[#C99B3B]/40 p-6 shadow-xl relative group">
+                      <span className="card-hover__shine" aria-hidden />
+                      <div className="relative z-[1]">
                       <div className="flex items-center justify-between mb-1">
                         <span className="text-xs font-bold tracking-widest text-[#C99B3B] uppercase">
                           YEAR {step.year}
@@ -94,7 +107,7 @@ export const Journey: React.FC = () => {
                           MILESTONE
                         </span>
                       </div>
-                      <h3 className="font-serif text-xl font-bold text-[#F8F5EC] mb-1">
+                      <h3 className="font-serif text-xl font-bold text-[#F8F5EC] mb-1 group-hover:text-[#C99B3B] transition-colors">
                         {step.title}
                       </h3>
                       <p className="text-[11px] text-[#C99B3B]/90 font-medium mb-2">
@@ -103,22 +116,23 @@ export const Journey: React.FC = () => {
                       <p className="text-xs text-[#F8F5EC]/80 leading-relaxed font-light">
                         {step.description}
                       </p>
+                      </div>
                     </div>
                   </div>
 
-                  {/* Icon Node */}
-                  <div className="z-10 flex items-center justify-center w-12 h-12 rounded-full bg-[#C99B3B] text-[#063F31] font-bold shadow-lg border-4 border-[#084C3B] shrink-0">
+                  <motion.div
+                    variants={expand}
+                    className="z-10 flex items-center justify-center w-12 h-12 rounded-full bg-[#C99B3B] text-[#063F31] font-bold shadow-lg border-4 border-[#084C3B] shrink-0"
+                  >
                     <Icon className="w-5 h-5" />
-                  </div>
+                  </motion.div>
 
-                  {/* Empty Spacer */}
-                  <div className="w-full sm:w-1/2 px-4 sm:px-8 hidden sm:block"></div>
+                  <div className="w-full sm:w-1/2 px-4 sm:px-8 hidden sm:block" />
                 </motion.div>
               );
             })}
-          </div>
+          </motion.div>
         </div>
-
       </div>
     </section>
   );

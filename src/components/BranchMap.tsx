@@ -149,7 +149,7 @@ export const BranchMap: React.FC<BranchMapProps> = ({
         ))}
       </MapContainer>
 
-      <div className="absolute top-4 left-4 z-[400] bg-[#063F31]/90 backdrop-blur-md px-3.5 py-1.5 border border-[#C99B3B]/40 flex items-center space-x-2">
+      <div className="absolute top-4 left-4 z-[400] bg-[#063F31] px-3.5 py-1.5 border border-[#C99B3B]/40 flex items-center space-x-2">
         <MapPin className="w-3.5 h-3.5 text-[#C99B3B]" />
         <span className="text-[10px] font-bold tracking-widest text-[#F8F5EC] uppercase">
           MALAYSIA RESTAURANT MAP
