@@ -78,7 +78,7 @@ export const Hero: React.FC = () => {
               variants={rise}
               className="text-sm sm:text-base text-[#F8F5EC]/85 leading-relaxed max-w-xl font-light"
             >
-              Established in 2011 by Syed Mohammad, Aasina Curry House brings Malaysian restaurant heritage, diverse cuisine, and a welcoming family dining experience rooted in authentic local flavors.
+              Established in 2011 by Syed Mohammad at Taman Satriya, Menggatal, Sabah. Aasina Curry House brings Malaysian restaurant heritage, diverse cuisine, and a welcoming family dining experience — call 016-8709786.
             </motion.p>
 
             <motion.div
@@ -109,8 +109,8 @@ export const Hero: React.FC = () => {
               className="grid grid-cols-2 sm:grid-cols-3 gap-4 pt-6 border-t border-[#C99B3B]/20 max-w-lg"
             >
               {[
-                { label: 'Cuisine', value: 'Malaysian Restaurant' },
-                { label: 'Positioning', value: 'Makan & Minuman Islam' },
+                { label: 'Home', value: 'Sabah, Malaysia' },
+                { label: 'Positioning', value: 'Makanan & Minuman Islam' },
                 { label: 'Founder', value: 'Syed Mohammad' },
               ].map((item) => (
                 <div key={item.label}>

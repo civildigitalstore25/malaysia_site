@@ -12,6 +12,7 @@ export interface Branch {
   description: string;
   isConfirmed: boolean;
   operatingHours?: string;
+  yearOpened?: number;
 }
 
 export interface MenuItem {

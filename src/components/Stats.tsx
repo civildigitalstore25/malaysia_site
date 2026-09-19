@@ -4,14 +4,14 @@ import { headerReveal, pop, staggerContainer } from './motion/variants';
 
 export const Stats: React.FC = () => {
   const stats = [
-    { number: '2011', label: 'Established Year', sub: 'Over a decade of culinary excellence' },
-    { number: 'Malaysian', label: 'Authentic Cuisine', sub: 'Traditional recipes & local flavours' },
-    { number: 'Aasina', label: 'Curry House', sub: 'Makan dan Minuman Islam' },
-    { number: 'Kuala Lumpur', label: 'Malaysia Heritage', sub: 'Serving everyday Malaysian families' }
+    { number: '2011', label: 'Established Year', sub: 'Founded by Syed Mohammad in Menggatal' },
+    { number: '5', label: 'Restaurant Branches', sub: 'Growing across Kota Kinabalu & Tuaran' },
+    { number: 'Sabah', label: 'Home Base', sub: 'Proudly serving Malaysian families' },
+    { number: 'Halal', label: 'Makanan Islam', sub: 'Quality food prepared with care' },
   ];
 
   return (
-    <section className="py-16 sm:py-20 bg-[#F4EDDD] text-[#151515] border-y border-[#C99B3B]/30 relative">
+    <section className="py-16 sm:py-20 bg-[#F7F0E4] text-[#151515] border-y border-[#C99B3B]/30 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           className="text-center max-w-3xl mx-auto mb-12"
@@ -20,14 +20,14 @@ export const Stats: React.FC = () => {
           whileInView="show"
           viewport={{ once: true, amount: 0.35 }}
         >
-          <span className="text-[11px] font-bold tracking-[0.25em] text-[#084C3B] uppercase">
+          <span className="text-[11px] font-bold tracking-[0.25em] text-[#8A6A28] uppercase">
             BUSINESS AT A GLANCE
           </span>
           <h2 className="font-serif text-3xl sm:text-4xl font-bold text-[#063F31] mt-2 mb-3">
             Heritage & Dedication
           </h2>
           <p className="text-sm sm:text-base text-[#151515]/75 leading-relaxed">
-            A restaurant built on Malaysian culinary heritage and a commitment to serving memorable food.
+            A Sabah restaurant built on Malaysian culinary heritage — from Taman Satriya in 2011 to five branches today.
           </p>
           <div className="w-16 h-0.5 bg-[#C99B3B] mx-auto mt-4"></div>
         </motion.div>
@@ -43,7 +43,7 @@ export const Stats: React.FC = () => {
             <motion.div
               key={idx}
               variants={pop}
-              className="card-hover--light bg-[#F8F5EC] p-6 border border-[#C99B3B]/30 text-center shadow-sm"
+              className="card-hover--light bg-[#FFFCFA] p-6 border border-[#C99B3B]/30 text-center shadow-sm"
             >
               <span className="card-hover__shine" aria-hidden />
               <div className="font-serif text-3xl sm:text-4xl font-bold text-[#063F31] mb-1 relative z-[1]">

@@ -27,7 +27,7 @@ export const Branches: React.FC = () => {
             Find Aasina Curry House
           </h2>
           <p className="text-base text-[#F8F5EC]/75 leading-relaxed font-light">
-            Discover our restaurant locations across Malaysia. Select a location to view interactive map coordinates and directions.
+            Discover our five restaurant locations across Sabah — Menggatal, Kota Kinabalu, and Tuaran. Select a card to locate it on the map and get directions.
           </p>
           <div className="w-16 h-0.5 bg-[#C99B3B] mx-auto mt-4"></div>
         </motion.div>

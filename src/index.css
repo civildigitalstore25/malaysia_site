@@ -6,6 +6,10 @@
     --color-deep-green: #084C3B;
     --color-cream: #F4EDDD;
     --color-cream-light: #F8F5EC;
+    --color-sand: #E8DFCE;
+    --color-warm-ivory: #F7F0E4;
+    --color-charcoal: #1A1510;
+    --color-bronze: #8A6A28;
     --color-gold: #C99B3B;
     --color-gold-hover: #D4AF37;
     --color-dark: #151515;
@@ -31,7 +35,7 @@
 
 .bg-pattern-cream {
   background-color: #F4EDDD;
-  background-image: radial-gradient(rgba(8, 76, 59, 0.06) 1px, transparent 1px);
+  background-image: radial-gradient(rgba(138, 106, 40, 0.08) 1px, transparent 1px);
   background-size: 24px 24px;
 }
 

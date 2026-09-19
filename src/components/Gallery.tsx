@@ -22,7 +22,7 @@ export const Gallery: React.FC = () => {
   ];
 
   return (
-    <section id="gallery" className="py-20 lg:py-28 bg-[#084C3B] text-[#F8F5EC] relative overflow-hidden">
+    <section id="gallery" className="py-20 lg:py-28 bg-[#1A1510] text-[#F8F5EC] relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           className="text-center max-w-3xl mx-auto mb-12"
@@ -39,7 +39,7 @@ export const Gallery: React.FC = () => {
             Inside Aasina Curry House
           </h2>
           <p className="text-base text-[#F8F5EC]/75 leading-relaxed font-light">
-            A glimpse into our restaurants, food, and dining experience.
+            A glimpse into our Sabah restaurants, food, and dining experience.
           </p>
           <div className="w-16 h-0.5 bg-[#C99B3B] mx-auto mt-4"></div>
         </motion.div>
@@ -60,7 +60,7 @@ export const Gallery: React.FC = () => {
               className={`px-4 py-2 text-xs font-bold tracking-widest uppercase transition-colors duration-300 border ${
                 activeCategory === cat.id
                   ? 'bg-[#C99B3B] text-[#063F31] border-[#C99B3B]'
-                  : 'bg-[#063F31]/80 text-[#F8F5EC]/80 border-[#C99B3B]/30 hover:border-[#C99B3B] hover:text-[#C99B3B]'
+                  : 'bg-[#1A1510] text-[#F8F5EC]/80 border-[#C99B3B]/30 hover:border-[#C99B3B] hover:text-[#C99B3B]'
               }`}
             >
               {cat.label}
@@ -79,7 +79,7 @@ export const Gallery: React.FC = () => {
                 exit={{ opacity: 0, scale: 0.96 }}
                 transition={{ duration: 0.4, delay: idx * 0.04, ease: easeOut }}
                 onClick={() => setLightboxIndex(idx)}
-                className="card-hover--media group relative h-[300px] bg-[#063F31] border border-[#C99B3B]/30 overflow-hidden cursor-pointer shadow-lg"
+                className="card-hover--media group relative h-[300px] bg-[#241E18] border border-[#C99B3B]/30 overflow-hidden cursor-pointer shadow-lg"
               >
                 <span className="card-hover__shine" aria-hidden />
                 <img
@@ -89,7 +89,7 @@ export const Gallery: React.FC = () => {
                   className="w-full h-full object-cover"
                 />
 
-                <div className="absolute inset-0 bg-[#063F31]/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-between p-6 z-[2]">
+                <div className="absolute inset-0 bg-[#1A1510]/85 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-between p-6 z-[2]">
                   <div className="self-end p-2 bg-[#C99B3B] text-[#063F31] rounded-full">
                     <Maximize2 className="w-4 h-4" />
                   </div>

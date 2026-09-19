@@ -5,7 +5,7 @@ import { headerReveal, wipeUp, staggerContainer } from './motion/variants';
 
 export const Cuisine: React.FC = () => {
   return (
-    <section id="cuisine" className="py-20 lg:py-28 bg-[#F4EDDD] text-[#151515] relative">
+    <section id="cuisine" className="py-20 lg:py-28 bg-[#E8DFCE] text-[#151515] relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           className="text-center max-w-3xl mx-auto mb-16"
@@ -14,14 +14,14 @@ export const Cuisine: React.FC = () => {
           whileInView="show"
           viewport={{ once: true, amount: 0.35 }}
         >
-          <span className="text-[11px] font-bold tracking-[0.25em] text-[#084C3B] uppercase">
+          <span className="text-[11px] font-bold tracking-[0.25em] text-[#8A6A28] uppercase">
             THE MENU
           </span>
           <h2 className="font-serif text-4xl sm:text-5xl font-bold text-[#063F31] mt-2 mb-4">
             Our Culinary Identity
           </h2>
           <p className="text-base text-[#151515]/75 leading-relaxed">
-            A diverse menu rooted in Malaysian restaurant culture, prepared with fresh ingredients and traditional techniques.
+            A diverse menu rooted in Sabah Malaysian restaurant culture — roti, nasi goreng, curries, and noodles prepared with traditional techniques.
           </p>
           <div className="w-16 h-0.5 bg-[#C99B3B] mx-auto mt-4"></div>
         </motion.div>

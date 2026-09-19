@@ -36,7 +36,7 @@ export const MenuHighlights: React.FC = () => {
             Selected Menu Highlights
           </h2>
           <p className="text-base text-[#F8F5EC]/75 leading-relaxed font-light">
-            A selection of dishes representing the breadth of the Aasina Curry House menu.
+            Signature dishes from our Sabah kitchens — roti, nasi goreng, specialty curries, and noodles.
           </p>
           <div className="w-16 h-0.5 bg-[#C99B3B] mx-auto mt-4"></div>
         </motion.div>

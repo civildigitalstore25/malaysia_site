@@ -49,7 +49,7 @@ export const Footer: React.FC = () => {
               Established 2011 by Syed Mohammad. Dedicated to serving traditional Malaysian restaurant heritage, hand-spun flatbreads, fragrant fried rice, and slow-cooked specialty curries.
             </p>
 
-            <div className="text-xs text-[#F8F5EC]/60">Malaysian Restaurant · Malaysia</div>
+            <div className="text-xs text-[#F8F5EC]/60">Malaysian Restaurant · Sabah, Malaysia</div>
           </motion.div>
 
           <motion.div variants={fadeUp} className="lg:col-span-6 flex flex-col justify-between">
@@ -73,11 +73,13 @@ export const Footer: React.FC = () => {
             </div>
 
             <div className="pt-6 mt-6 border-t border-[#C99B3B]/10 flex flex-wrap gap-4 text-[11px] text-[#F8F5EC]/50">
-              <span>Primary Phone: 016-8709786</span>
+              <a href="tel:0168709786" className="hover:text-[#C99B3B] transition-colors">
+                Phone: 016-8709786
+              </a>
               <span>•</span>
-              <span>Founded 2011</span>
+              <span>Founded 2011 · Menggatal</span>
               <span>•</span>
-              <span>Makan & Minuman Islam</span>
+              <span>Makanan & Minuman Islam</span>
             </div>
           </motion.div>
         </div>

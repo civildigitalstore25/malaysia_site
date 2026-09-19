@@ -55,19 +55,19 @@ export const Story: React.FC = () => {
             </motion.h2>
 
             <motion.p variants={rise} className="text-base text-[#F8F5EC]/85 leading-relaxed font-light">
-              Aasina Curry House was established in 2011 by Syed Mohammad. Over the years, the restaurant has developed its identity around Malaysian dining, familiar local flavours, and a menu designed for everyday customers and families.
+              In 2011, Syed Mohammad started the restaurant business at Taman Satriya, Menggatal, Sabah. From that first curry house, Aasina has grown into a trusted name for Malaysian dining, familiar local flavours, and meals made for everyday families.
             </motion.p>
 
             <motion.p variants={rise} className="text-sm sm:text-base text-[#F8F5EC]/75 leading-relaxed font-light">
-              From our crispy hand-crafted Roti Canai and fragrant Nasi Goreng to our rich, slow-simmered specialty curries, every dish reflects our dedication to culinary consistency, warm hospitality, and community dining.
+              From crispy hand-crafted Roti Canai and fragrant Nasi Goreng to slow-simmered specialty curries, every plate reflects our dedication to consistency, warm hospitality, and community dining across Kota Kinabalu and Tuaran.
             </motion.p>
 
             <motion.div variants={rise} className="grid grid-cols-2 gap-6 pt-6 border-t border-[#C99B3B]/20">
               {[
                 { label: 'FOUNDER', value: 'Syed Mohammad' },
-                { label: 'ESTABLISHED', value: '2011' },
-                { label: 'CUISINE', value: 'Malaysian Restaurant' },
-                { label: 'POSITIONING', value: 'Makan dan Minuman Islam' },
+                { label: 'ESTABLISHED', value: '2011 · Menggatal' },
+                { label: 'CONTACT', value: '016-8709786' },
+                { label: 'POSITIONING', value: 'Makanan dan Minuman Islam' },
               ].map((item) => (
                 <div key={item.label} className="pl-4 border-l-2 border-[#C99B3B]">
                   <span className="block text-[10px] font-bold tracking-[0.2em] text-[#C99B3B] uppercase">

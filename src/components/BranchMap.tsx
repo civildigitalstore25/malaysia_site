@@ -120,7 +120,7 @@ export const BranchMap: React.FC<BranchMapProps> = ({
   onSelectBranch,
 }) => {
   const initialCenter: [number, number] =
-    selectedBranch?.coordinates ?? [6.207603, 116.25];
+    selectedBranch?.coordinates ?? [6.1, 116.18];
 
   const activeBranches = branches.filter((b) => b.coordinates !== null);
 
@@ -128,7 +128,7 @@ export const BranchMap: React.FC<BranchMapProps> = ({
     <div className="relative w-full h-[400px] lg:h-full min-h-[400px] border border-[#C99B3B]/40 shadow-2xl overflow-hidden">
       <MapContainer
         center={initialCenter}
-        zoom={7}
+        zoom={10}
         scrollWheelZoom={false}
         className="w-full h-full"
       >
@@ -152,7 +152,7 @@ export const BranchMap: React.FC<BranchMapProps> = ({
       <div className="absolute top-4 left-4 z-[400] bg-[#063F31] px-3.5 py-1.5 border border-[#C99B3B]/40 flex items-center space-x-2">
         <MapPin className="w-3.5 h-3.5 text-[#C99B3B]" />
         <span className="text-[10px] font-bold tracking-widest text-[#F8F5EC] uppercase">
-          MALAYSIA RESTAURANT MAP
+          MALAYSIA · SABAH MAP
         </span>
       </div>
     </div>
