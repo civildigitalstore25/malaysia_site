@@ -6,7 +6,7 @@ export const foodCategories: FoodCategory[] = [
     number: '01',
     name: 'ROTI & MURTABAK',
     description: 'Hand-crafted flatbreads spun fresh to order and savory stuffed pastries served with signature dhal and curry.',
-    image: '/malaysia/3.jpeg'
+    image: '/malaysia/3.png'
   },
   {
     id: 'nasi',
@@ -20,7 +20,7 @@ export const foodCategories: FoodCategory[] = [
     number: '03',
     name: 'SPECIALTY DISHES',
     description: 'Curated preparations rooted in Malaysian restaurant culture, rich coconut curries, and aromatic slow-cooked dishes.',
-    image: '/malaysia/5.jpeg'
+    image: '/malaysia/5.png'
   },
   {
     id: 'noodles',
@@ -39,7 +39,7 @@ export const menuItems: MenuItem[] = [
     description: 'Traditional Malaysian crispy, flaky flatbread served fresh off the griddle with fragrant dhal sauce and curry dip.',
     isPopular: true,
     tags: ['Chef Special', 'Hand-Crafted'],
-    image: '/malaysia/3.jpeg'
+    image: '/malaysia/3.png'
   },
   {
     id: 'm2',
@@ -48,7 +48,7 @@ export const menuItems: MenuItem[] = [
     description: 'Savory flatbread stuffed with spiced minced chicken, beaten egg, and sweet onions, grilled until golden brown.',
     isPopular: true,
     tags: ['Customer Favorite'],
-    image: '/malaysia/img.jpeg'
+    image: '/malaysia/img.png'
   },
   {
     id: 'm3',
@@ -73,7 +73,7 @@ export const menuItems: MenuItem[] = [
     name: 'Nasi Goreng Daging',
     description: 'Wok-charred fried rice with tender beef slices, kangkung, chili, and dark soy sauce, topped with a fried egg.',
     tags: ['Wok Hei'],
-    image: '/malaysia/5.jpeg'
+    image: '/malaysia/5.png'
   },
   {
     id: 'm6',
@@ -90,7 +90,7 @@ export const menuItems: MenuItem[] = [
     description: 'Tender chicken slow-simmered in coconut milk, lemongrass, galangal, and house-ground curry spices.',
     isPopular: true,
     tags: ['Signature'],
-    image: '/malaysia/3.jpeg'
+    image: '/malaysia/3.png'
   },
   {
     id: 'm8',
@@ -98,7 +98,7 @@ export const menuItems: MenuItem[] = [
     name: 'Special Lamb Rendang',
     description: 'Rich, caramelized lamb dry curry cooked down with roasted coconut (kerisik), kaffir lime leaves, and spices.',
     tags: ['Heritage'],
-    image: '/malaysia/5.jpeg'
+    image: '/malaysia/5.png'
   },
   {
     id: 'm9',
@@ -123,6 +123,6 @@ export const menuItems: MenuItem[] = [
     name: 'Mee Basa Ayam',
     description: 'Classic Sabah-style wet tossed noodles in savory gravy served with succulent chicken and fresh greens.',
     tags: ['Sabah Specialty'],
-    image: '/malaysia/img.jpeg'
+    image: '/malaysia/img.png'
   }
 ];

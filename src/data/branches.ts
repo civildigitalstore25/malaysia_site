@@ -52,7 +52,7 @@ export const branches: Branch[] = [
     coordinates: [5.9804, 116.0735],
     googleMapsUrl: 'https://maps.app.goo.gl/ZMAVJTJneM6bJHYf6?g_st=awb',
     phone: '016-8709786',
-    image: '/malaysia/3.jpeg',
+    image: '/malaysia/3.png',
     description:
       'Established in 2024 in Kampung Indai, Tuaran. Serving authentic Malaysian favourites with extended hours for the local community.',
     isConfirmed: true,
@@ -87,7 +87,7 @@ export const branches: Branch[] = [
     coordinates: [6.0312, 116.1215],
     googleMapsUrl: 'https://maps.app.goo.gl/FdAGVoKyv1XrdzD49?g_st=ac',
     phone: '016-8709786',
-    image: '/malaysia/5.jpeg',
+    image: '/malaysia/5.png',
     description:
       'Opened in 2026, continuing our culinary tradition of quality halal Malaysian food and warm hospitality.',
     isConfirmed: true,

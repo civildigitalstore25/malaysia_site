@@ -37,7 +37,7 @@ export const galleryItems: GalleryItem[] = [
     id: 5,
     title: 'Signature House Dishes & Curries',
     category: 'food',
-    src: '/malaysia/5.jpeg',
+    src: '/malaysia/5.png',
     alt: 'Aasina Curry House signature dish selection',
     caption: 'Traditional recipes prepared fresh daily across all Aasina locations.'
   },
@@ -53,7 +53,7 @@ export const galleryItems: GalleryItem[] = [
     id: 7,
     title: 'Signature Roti Murtabak & Dhal Dip',
     category: 'food',
-    src: '/malaysia/img.jpeg',
+    src: '/malaysia/img.png',
     alt: 'Crispy Murtabak with dhal dipping sauce',
     caption: 'Hand-crafted stuffed Murtabak grilled fresh to order.'
   },
