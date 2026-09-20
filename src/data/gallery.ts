@@ -21,7 +21,7 @@ export const galleryItems: GalleryItem[] = [
     id: 3,
     title: 'Authentic Malaysian Flatbreads & Curry Spread',
     category: 'food',
-    src: '/malaysia/3.jpeg',
+    src: '/malaysia/3.png',
     alt: 'Authentic Roti Canai and curry meal spread at Aasina Curry House',
     caption: 'Freshly flipped flatbreads served with rich house dhal and chicken curry.'
   },
@@ -29,7 +29,7 @@ export const galleryItems: GalleryItem[] = [
     id: 4,
     title: 'Specialty Malaysian Nasi Goreng',
     category: 'food',
-    src: '/malaysia/4.jpeg',
+    src: '/malaysia/4.png',
     alt: 'Nasi Goreng dish served with fried chicken and sides',
     caption: 'Wok-charred fried rice topped with spiced fried chicken leg and egg.'
   },

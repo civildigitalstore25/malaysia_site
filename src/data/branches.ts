@@ -70,7 +70,7 @@ export const branches: Branch[] = [
     googleMapsUrl:
       'https://www.google.com/maps?q=6.2076029777526855,116.24999237060547&z=17&hl=en',
     phone: '016-8709786',
-    image: '/malaysia/4.jpeg',
+    image: '/malaysia/4.png',
     description:
       'Established in 2015 as Aasina Cafe — casual Malaysian dining, specialty drinks, roti, and quick family bites.',
     isConfirmed: true,

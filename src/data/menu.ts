@@ -13,7 +13,7 @@ export const foodCategories: FoodCategory[] = [
     number: '02',
     name: 'NASI GORENG',
     description: 'Malaysian fried rice prepared with fragrant spices across multiple variants, garnished with keropok and fried egg.',
-    image: '/malaysia/4.jpeg'
+    image: '/malaysia/4.png'
   },
   {
     id: 'specialty',
@@ -65,7 +65,7 @@ export const menuItems: MenuItem[] = [
     description: 'Classic Malaysian fried rice tossed with garlic, sambal, and fresh vegetables, served with spiced fried chicken leg and keropok.',
     isPopular: true,
     tags: ['Popular'],
-    image: '/malaysia/4.jpeg'
+    image: '/malaysia/4.png'
   },
   {
     id: 'm5',
@@ -115,7 +115,7 @@ export const menuItems: MenuItem[] = [
     name: 'Tomyam Ayam',
     description: 'Aromatic spicy and sour red soup infusion with tender chicken slices, mushrooms, kaffir lime, and lemongrass.',
     tags: ['Spicy & Sour'],
-    image: '/malaysia/4.jpeg'
+    image: '/malaysia/4.png'
   },
   {
     id: 'm11',
