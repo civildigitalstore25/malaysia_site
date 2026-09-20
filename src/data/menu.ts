@@ -29,6 +29,13 @@ export const foodCategories: FoodCategory[] = [
     description: 'Wok-tossed noodle specialties, rich silky gravies, and spicy steaming herb broths cooked to order.',
     image: '/images/noodles_soups.png',
   },
+  {
+    id: 'biryani',
+    number: '05',
+    name: 'NASI BIRYANI',
+    description: 'Fragrant spiced rice layered with tender meats and fried onions, served with cooling raita.',
+    image: '/malaysia/6.png',
+  },
 ];
 
 export const menuItems: MenuItem[] = [
@@ -124,5 +131,38 @@ export const menuItems: MenuItem[] = [
     description: 'Classic Sabah-style wet tossed noodles in savory gravy served with succulent chicken and fresh greens.',
     tags: ['Sabah Specialty'],
     image: '/images/dishes/mee-basa-ayam.png',
+  },
+  {
+    id: 'm12',
+    category: 'biryani',
+    name: 'Nasi Biryani Ayam',
+    description: 'Fragrant basmati rice layered with spiced chicken, fried onions, and herbs, served with cooling raita.',
+    isPopular: true,
+    tags: ['Special'],
+    image: '/malaysia/6.png',
+  },
+  {
+    id: 'm13',
+    category: 'biryani',
+    name: 'Nasi Biryani Daging',
+    description: 'Aromatic biryani rice with tender beef pieces, caramelized onions, and house spice blend.',
+    tags: ['Hearty'],
+    image: '/malaysia/6.png',
+  },
+  {
+    id: 'm14',
+    category: 'biryani',
+    name: 'Nasi Biryani Kambing',
+    description: 'Slow-cooked mutton biryani with fragrant spices, mint, and crispy fried shallots.',
+    tags: ['Premium'],
+    image: '/malaysia/6.png',
+  },
+  {
+    id: 'm15',
+    category: 'biryani',
+    name: 'Nasi Biryani Kosong',
+    description: 'Classic plain biryani rice topped with fried onions and fresh herbs, perfect with curry sides.',
+    tags: ['Classic'],
+    image: '/malaysia/6.png',
   },
 ];

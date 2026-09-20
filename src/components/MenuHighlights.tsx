@@ -5,7 +5,7 @@ import { Star } from 'lucide-react';
 import { dropIn, headerReveal, staggerContainer, easeOut } from './motion/variants';
 
 export const MenuHighlights: React.FC = () => {
-  const [activeTab, setActiveTab] = useState<'all' | 'roti' | 'nasi' | 'specialty' | 'noodles'>('all');
+  const [activeTab, setActiveTab] = useState<'all' | 'roti' | 'nasi' | 'specialty' | 'noodles' | 'biryani'>('all');
 
   const filteredItems = activeTab === 'all'
     ? menuItems
@@ -16,7 +16,8 @@ export const MenuHighlights: React.FC = () => {
     { id: 'roti', label: 'ROTI & MURTABAK' },
     { id: 'nasi', label: 'NASI GORENG' },
     { id: 'specialty', label: 'SPECIALTY DISHES' },
-    { id: 'noodles', label: 'NOODLES & SOUPS' }
+    { id: 'noodles', label: 'NOODLES & SOUPS' },
+    { id: 'biryani', label: 'NASI BIRYANI' },
   ];
 
   return (
@@ -36,7 +37,7 @@ export const MenuHighlights: React.FC = () => {
             Selected Menu Highlights
           </h2>
           <p className="text-base text-readable-on-dark leading-relaxed">
-            Signature dishes from our Sabah kitchens — roti, nasi goreng, specialty curries, and noodles.
+            Signature dishes from our Sabah kitchens — roti, nasi goreng, specialty curries, noodles, and biryani.
           </p>
           <div className="w-16 h-0.5 bg-[#C99B3B] mx-auto mt-4"></div>
         </motion.div>

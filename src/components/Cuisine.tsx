@@ -21,13 +21,13 @@ export const Cuisine: React.FC = () => {
             Our Culinary Identity
           </h2>
           <p className="text-base text-readable-on-light leading-relaxed">
-            A diverse menu rooted in Sabah Malaysian restaurant culture — roti, nasi goreng, curries, and noodles prepared with traditional techniques.
+            A diverse menu rooted in Sabah Malaysian restaurant culture — roti, nasi goreng, curries, noodles, and biryani prepared with traditional techniques.
           </p>
           <div className="w-16 h-0.5 bg-[#C99B3B] mx-auto mt-4"></div>
         </motion.div>
 
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6"
           variants={staggerContainer(0.12, 0.08)}
           initial="hidden"
           whileInView="show"

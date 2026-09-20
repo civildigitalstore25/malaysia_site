@@ -97,4 +97,12 @@ export const galleryItems: GalleryItem[] = [
     alt: 'Crispy stuffed murtabak',
     caption: 'Golden stuffed murtabak grilled to order.',
   },
+  {
+    id: 13,
+    title: 'Nasi Biryani',
+    category: 'interior',
+    src: '/malaysia/6.png',
+    alt: 'Nasi Biryani',
+    caption: 'Fragrant spiced rice layered with tender meats and fried onions, served with cooling raita.',
+  }
 ];

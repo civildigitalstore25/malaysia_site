@@ -17,7 +17,7 @@ export interface Branch {
 
 export interface MenuItem {
   id: string;
-  category: 'roti' | 'nasi' | 'specialty' | 'noodles';
+  category: 'roti' | 'nasi' | 'specialty' | 'noodles' | 'biryani';
   name: string;
   description: string;
   price?: string;
@@ -27,7 +27,7 @@ export interface MenuItem {
 }
 
 export interface FoodCategory {
-  id: 'roti' | 'nasi' | 'specialty' | 'noodles';
+  id: 'roti' | 'nasi' | 'specialty' | 'noodles' | 'biryani';
   number: string;
   name: string;
   description: string;
