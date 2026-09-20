@@ -74,10 +74,20 @@ export const MenuHighlights: React.FC = () => {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: 16 }}
                 transition={{ duration: 0.35, delay: i * 0.04, ease: easeOut }}
-                className="card-hover bg-[#084C3B]/80 border border-[#C99B3B]/30 p-6 flex flex-col justify-between group min-h-[200px]"
+                className="card-hover bg-[#084C3B]/80 border border-[#C99B3B]/30 overflow-hidden flex flex-col justify-between group"
               >
                 <span className="card-hover__shine" aria-hidden />
-                <div className="relative z-[1]">
+                {item.image && (
+                  <div className="relative z-[1] w-full h-40 overflow-hidden border-b border-[#C99B3B]/20 card-hover__media">
+                    <img
+                      src={item.image}
+                      alt={item.name}
+                      className="w-full h-full object-cover"
+                      loading="lazy"
+                    />
+                  </div>
+                )}
+                <div className="relative z-[1] p-6 flex flex-col flex-1">
                   <div className="flex items-center justify-between mb-3">
                     <span className="text-[10px] font-bold tracking-widest text-[#C99B3B] uppercase bg-[#063F31] px-2.5 py-1 border border-[#C99B3B]/30">
                       {item.category.toUpperCase()}
@@ -92,19 +102,19 @@ export const MenuHighlights: React.FC = () => {
                   <h3 className="font-serif text-xl font-bold text-[#F8F5EC] group-hover:text-[#C99B3B] transition-colors mb-2">
                     {item.name}
                   </h3>
-                  <p className="text-sm text-readable-on-dark leading-relaxed mb-4">
+                  <p className="text-sm text-readable-on-dark leading-relaxed mb-4 flex-1">
                     {item.description}
                   </p>
+                  {item.tags && item.tags.length > 0 && (
+                    <div className="pt-3 border-t border-[#C99B3B]/15 flex flex-wrap gap-1.5">
+                      {item.tags.map((tag, idx) => (
+                        <span key={idx} className="text-[10px] text-[#C99B3B]/90 font-medium">
+                          • {tag}
+                        </span>
+                      ))}
+                    </div>
+                  )}
                 </div>
-                {item.tags && item.tags.length > 0 && (
-                  <div className="pt-3 border-t border-[#C99B3B]/15 flex flex-wrap gap-1.5 relative z-[1]">
-                    {item.tags.map((tag, idx) => (
-                      <span key={idx} className="text-[10px] text-[#C99B3B]/90 font-medium">
-                        • {tag}
-                      </span>
-                    ))}
-                  </div>
-                )}
               </motion.div>
             ))}
           </AnimatePresence>

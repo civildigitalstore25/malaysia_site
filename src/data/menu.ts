@@ -6,29 +6,29 @@ export const foodCategories: FoodCategory[] = [
     number: '01',
     name: 'ROTI & MURTABAK',
     description: 'Hand-crafted flatbreads spun fresh to order and savory stuffed pastries served with signature dhal and curry.',
-    image: '/malaysia/3.png'
+    image: '/images/roti_murtabak.png',
   },
   {
     id: 'nasi',
     number: '02',
     name: 'NASI GORENG',
     description: 'Malaysian fried rice prepared with fragrant spices across multiple variants, garnished with keropok and fried egg.',
-    image: '/malaysia/4.png'
+    image: '/images/nasi_goreng.png',
   },
   {
     id: 'specialty',
     number: '03',
     name: 'SPECIALTY DISHES',
     description: 'Curated preparations rooted in Malaysian restaurant culture, rich coconut curries, and aromatic slow-cooked dishes.',
-    image: '/malaysia/5.png'
+    image: '/images/specialty_dishes.png',
   },
   {
     id: 'noodles',
     number: '04',
     name: 'NOODLES & SOUPS',
     description: 'Wok-tossed noodle specialties, rich silky gravies, and spicy steaming herb broths cooked to order.',
-    image: '/malaysia/image.jpeg'
-  }
+    image: '/images/noodles_soups.png',
+  },
 ];
 
 export const menuItems: MenuItem[] = [
@@ -39,7 +39,7 @@ export const menuItems: MenuItem[] = [
     description: 'Traditional Malaysian crispy, flaky flatbread served fresh off the griddle with fragrant dhal sauce and curry dip.',
     isPopular: true,
     tags: ['Chef Special', 'Hand-Crafted'],
-    image: '/malaysia/3.png'
+    image: '/images/dishes/roti-canai.png',
   },
   {
     id: 'm2',
@@ -48,7 +48,7 @@ export const menuItems: MenuItem[] = [
     description: 'Savory flatbread stuffed with spiced minced chicken, beaten egg, and sweet onions, grilled until golden brown.',
     isPopular: true,
     tags: ['Customer Favorite'],
-    image: '/malaysia/img.png'
+    image: '/images/dishes/murtabak-ayam.png',
   },
   {
     id: 'm3',
@@ -56,7 +56,7 @@ export const menuItems: MenuItem[] = [
     name: 'Murtabak Daging',
     description: 'Pan-fried parcel filled with aromatic spiced beef, caramelized onions, served with pickled pink onions and curry gravy.',
     tags: ['Traditional'],
-    image: '/malaysia/WhatsApp Image 2026-09-18 at 10.17.56 PM.jpeg'
+    image: '/images/dishes/murtabak-daging.png',
   },
   {
     id: 'm4',
@@ -65,7 +65,7 @@ export const menuItems: MenuItem[] = [
     description: 'Classic Malaysian fried rice tossed with garlic, sambal, and fresh vegetables, served with spiced fried chicken leg and keropok.',
     isPopular: true,
     tags: ['Popular'],
-    image: '/malaysia/4.png'
+    image: '/images/dishes/nasi-goreng-ayam.png',
   },
   {
     id: 'm5',
@@ -73,7 +73,7 @@ export const menuItems: MenuItem[] = [
     name: 'Nasi Goreng Daging',
     description: 'Wok-charred fried rice with tender beef slices, kangkung, chili, and dark soy sauce, topped with a fried egg.',
     tags: ['Wok Hei'],
-    image: '/malaysia/5.png'
+    image: '/images/dishes/nasi-goreng-daging.png',
   },
   {
     id: 'm6',
@@ -81,7 +81,7 @@ export const menuItems: MenuItem[] = [
     name: 'Nasi Goreng Seafood',
     description: 'Fragrant fried rice packed with fresh squid, juicy prawns, fish cake slices, and aromatic spices.',
     tags: ['Seafood'],
-    image: '/malaysia/image.jpeg'
+    image: '/images/dishes/nasi-goreng-seafood.png',
   },
   {
     id: 'm7',
@@ -90,7 +90,7 @@ export const menuItems: MenuItem[] = [
     description: 'Tender chicken slow-simmered in coconut milk, lemongrass, galangal, and house-ground curry spices.',
     isPopular: true,
     tags: ['Signature'],
-    image: '/malaysia/3.png'
+    image: '/images/dishes/chicken-curry.png',
   },
   {
     id: 'm8',
@@ -98,7 +98,7 @@ export const menuItems: MenuItem[] = [
     name: 'Special Lamb Rendang',
     description: 'Rich, caramelized lamb dry curry cooked down with roasted coconut (kerisik), kaffir lime leaves, and spices.',
     tags: ['Heritage'],
-    image: '/malaysia/5.png'
+    image: '/images/dishes/lamb-rendang.png',
   },
   {
     id: 'm9',
@@ -107,7 +107,7 @@ export const menuItems: MenuItem[] = [
     description: 'Silky smooth flat rice noodles wok-charred and smothered in rich, velvety egg drop chicken gravy.',
     isPopular: true,
     tags: ['Wok Classic'],
-    image: '/malaysia/image.jpeg'
+    image: '/images/dishes/watan-ho-ayam.png',
   },
   {
     id: 'm10',
@@ -115,7 +115,7 @@ export const menuItems: MenuItem[] = [
     name: 'Tomyam Ayam',
     description: 'Aromatic spicy and sour red soup infusion with tender chicken slices, mushrooms, kaffir lime, and lemongrass.',
     tags: ['Spicy & Sour'],
-    image: '/malaysia/4.png'
+    image: '/images/dishes/tomyam-ayam.png',
   },
   {
     id: 'm11',
@@ -123,6 +123,6 @@ export const menuItems: MenuItem[] = [
     name: 'Mee Basa Ayam',
     description: 'Classic Sabah-style wet tossed noodles in savory gravy served with succulent chicken and fresh greens.',
     tags: ['Sabah Specialty'],
-    image: '/malaysia/img.png'
-  }
+    image: '/images/dishes/mee-basa-ayam.png',
+  },
 ];
