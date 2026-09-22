@@ -14,19 +14,11 @@ export const Journey: React.FC = () => {
       icon: Award,
     },
     {
-      year: '2015',
-      title: 'Aasina Cafe Established (4th Branch)',
-      location: 'Sabah, Malaysia',
-      description:
-        'Expanding into casual cafe dining with specialty drinks, roti, and everyday family meals across Sabah.',
-      icon: Coffee,
-    },
-    {
       year: '2023',
-      title: 'Restoran Aasina Curry House 2 (2nd Branch)',
-      location: 'Taman Canggih Commercial Centre, Jalan Tuaran Bypass, Kota Kinabalu',
+      title: 'AASINA CURRYHOUSE (2nd Branch)',
+      location: 'Plaza Lemawang 2, Jalan Tuaran, Tuaran, Sabah',
       description:
-        'Our 2nd branch opens along Jalan Tuaran Bypass, bringing signature curries and flatbreads to more families in Kota Kinabalu.',
+        'Our 2nd branch opens at Plaza Lemawang 2, bringing signature curries and flatbreads to more families in Tuaran.',
       icon: Store,
     },
     {
@@ -34,15 +26,23 @@ export const Journey: React.FC = () => {
       title: 'Restoran Aasina Maju (3rd Branch)',
       location: 'Kampung Indai, Tuaran, Sabah',
       description:
-        'Our 3rd branch opens in Kampung Indai, Tuaran — authentic Malaysian favourites with extended community hours.',
+        'Our 3rd branch opens in Kampung Indai, Tuaran — authentic Malaysian favourites with 24-hour community dining.',
       icon: Compass,
     },
     {
-      year: '2026',
-      title: 'Aasina Curry House (5th Branch)',
-      location: 'Sabah, Malaysia',
+      year: '2025',
+      title: 'Restoren Aasina Cafe (4th Branch)',
+      location: 'Tuaran, Sabah',
       description:
-        'Continuing our culinary heritage, quality halal dining, and commitment to Malaysian food lovers across Sabah.',
+        'Aasina Cafe opens with casual Malaysian dining, specialty drinks, roti, and everyday family meals.',
+      icon: Coffee,
+    },
+    {
+      year: '2026',
+      title: 'AASINA CURRYHOUSE — Plaza Lemawang 2 (5th Branch)',
+      location: 'Plaza Lemawang 2, Jalan Tuaran, Tuaran, Sabah',
+      description:
+        'Our newest branch continues the culinary heritage, quality halal dining, and commitment to Malaysian food lovers across Sabah.',
       icon: Calendar,
     },
   ];

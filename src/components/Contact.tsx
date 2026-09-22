@@ -120,7 +120,7 @@ export const Contact: React.FC = () => {
               Looking for our restaurant address & directions?
             </h3>
             <p className="text-sm text-readable-on-dark max-w-xl">
-              Use our interactive map to find Aasina Curry House branches in Menggatal, Kota Kinabalu, and Tuaran — then open Google Maps for directions.
+              Use our interactive map to find Aasina Curry House branches in Menggatal and Tuaran — then open Google Maps for directions.
             </p>
           </div>
 

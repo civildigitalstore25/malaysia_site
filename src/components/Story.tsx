@@ -59,7 +59,7 @@ export const Story: React.FC = () => {
             </motion.p>
 
             <motion.p variants={rise} className="text-sm sm:text-base text-readable-on-dark leading-relaxed">
-              From crispy hand-crafted Roti Canai and fragrant Nasi Goreng to slow-simmered specialty curries, every plate reflects our dedication to consistency, warm hospitality, and community dining across Kota Kinabalu and Tuaran.
+              From crispy hand-crafted Roti Canai and fragrant Nasi Goreng to slow-simmered specialty curries, every plate reflects our dedication to consistency, warm hospitality, and community dining across Menggatal and Tuaran.
             </motion.p>
 
             <motion.div variants={rise} className="grid grid-cols-2 gap-6 pt-6 border-t border-[#C99B3B]/20">

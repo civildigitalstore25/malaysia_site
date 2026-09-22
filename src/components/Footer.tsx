@@ -33,12 +33,19 @@ export const Footer: React.FC = () => {
       >
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 pb-12 border-b border-[#C99B3B]/20">
           <motion.div variants={fadeUp} className="lg:col-span-6 space-y-4">
-            <div className="flex items-center space-x-2">
-              <span className="font-serif text-3xl font-bold tracking-wider text-[#F8F5EC]">AASINA</span>
-              <span className="h-4 w-px bg-[#C99B3B]" />
-              <span className="text-xs font-semibold tracking-widest text-[#C99B3B] uppercase">
-                CURRY HOUSE
-              </span>
+            <div className="flex items-center gap-3">
+              <img
+                src="/logo.svg"
+                alt="Aasina Curry House"
+                className="h-14 w-14 object-contain shrink-0"
+              />
+              <div className="flex items-center space-x-2">
+                <span className="font-serif text-3xl font-bold tracking-wider text-[#F8F5EC]">AASINA</span>
+                <span className="h-4 w-px bg-[#C99B3B]" />
+                <span className="text-xs font-semibold tracking-widest text-[#C99B3B] uppercase">
+                  CURRY HOUSE
+                </span>
+              </div>
             </div>
 
             <p className="text-xs tracking-[0.25em] text-[#C99B3B] font-semibold uppercase">

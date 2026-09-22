@@ -56,20 +56,27 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
           <a
             href="#hero"
             onClick={(e) => handleNavClick(e, '#hero')}
-            className="group flex flex-col focus:outline-none"
+            className="group flex items-center gap-3 focus:outline-none"
           >
-            <div className="flex items-center space-x-2">
-              <span className="font-serif text-2xl sm:text-3xl font-bold tracking-wider text-[#F8F5EC] group-hover:text-[#C99B3B] transition-colors">
-                AASINA
-              </span>
-              <span className="h-4 w-px bg-[#C99B3B]/40"></span>
-              <span className="text-xs font-semibold tracking-widest text-[#C99B3B] uppercase">
-                Est. 2011
+            <img
+              src="/logo.svg"
+              alt="Aasina Curry House"
+              className="h-16 w-16 sm:h-20 sm:w-20 object-contain shrink-0"
+            />
+            <div className="flex flex-col">
+              <div className="flex items-center space-x-2">
+                <span className="font-serif text-2xl sm:text-3xl font-bold tracking-wider text-[#F8F5EC] group-hover:text-[#C99B3B] transition-colors">
+                  AASINA
+                </span>
+                <span className="h-4 w-px bg-[#C99B3B]/40"></span>
+                <span className="text-xs font-semibold tracking-widest text-[#C99B3B] uppercase">
+                  Est. 2011
+                </span>
+              </div>
+              <span className="text-[10px] tracking-[0.25em] text-[#C99B3B]/90 uppercase font-medium">
+                Curry House • Malaysian Heritage
               </span>
             </div>
-            <span className="text-[10px] tracking-[0.25em] text-[#C99B3B]/90 uppercase font-medium">
-              Curry House • Malaysian Heritage
-            </span>
           </a>
 
           {/* Desktop Navigation Links */}
