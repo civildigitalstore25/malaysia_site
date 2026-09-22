@@ -139,7 +139,7 @@ export const menuItems: MenuItem[] = [
     description: 'Fragrant basmati rice layered with spiced chicken, fried onions, and herbs, served with cooling raita.',
     isPopular: true,
     tags: ['Special'],
-    image: '/malaysia/6.png',
+    image: '/images/dishes/nasi-biryani-ayam.png',
   },
   {
     id: 'm13',
@@ -147,7 +147,7 @@ export const menuItems: MenuItem[] = [
     name: 'Nasi Biryani Daging',
     description: 'Aromatic biryani rice with tender beef pieces, caramelized onions, and house spice blend.',
     tags: ['Hearty'],
-    image: '/malaysia/6.png',
+    image: '/images/dishes/nasi-biryani-daging.png',
   },
   {
     id: 'm14',
@@ -155,7 +155,7 @@ export const menuItems: MenuItem[] = [
     name: 'Nasi Biryani Kambing',
     description: 'Slow-cooked mutton biryani with fragrant spices, mint, and crispy fried shallots.',
     tags: ['Premium'],
-    image: '/malaysia/6.png',
+    image: '/images/dishes/nasi-biryani-kambing.png',
   },
   {
     id: 'm15',
@@ -163,6 +163,6 @@ export const menuItems: MenuItem[] = [
     name: 'Nasi Biryani Kosong',
     description: 'Classic plain biryani rice topped with fried onions and fresh herbs, perfect with curry sides.',
     tags: ['Classic'],
-    image: '/malaysia/6.png',
+    image: '/images/dishes/nasi-biryani-kosong.png',
   },
 ];

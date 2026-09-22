@@ -37,7 +37,7 @@ export interface FoodCategory {
 export interface GalleryItem {
   id: number;
   title: string;
-  category: 'restaurant' | 'food' | 'dining' | 'interior';
+  category: 'restaurant' | 'food' | 'dining' | 'menus';
   src: string;
   alt: string;
   caption?: string;

@@ -6,7 +6,7 @@ import { Maximize2, Camera } from 'lucide-react';
 import { headerReveal, swingIn, staggerContainer, easeOut } from './motion/variants';
 
 export const Gallery: React.FC = () => {
-  const [activeCategory, setActiveCategory] = useState<'all' | 'restaurant' | 'food' | 'dining' | 'interior'>('all');
+  const [activeCategory, setActiveCategory] = useState<'all' | 'restaurant' | 'food' | 'dining' | 'menus'>('all');
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
 
   const filteredItems = activeCategory === 'all'
@@ -18,7 +18,7 @@ export const Gallery: React.FC = () => {
     { id: 'restaurant', label: 'RESTAURANT' },
     { id: 'food', label: 'FOOD & DISHES' },
     { id: 'dining', label: 'DINING EXPERIENCE' },
-    { id: 'interior', label: 'INTERIOR' }
+    { id: 'menus', label: 'MENUS' },
   ];
 
   return (

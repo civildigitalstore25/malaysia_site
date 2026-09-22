@@ -92,7 +92,7 @@ export const galleryItems: GalleryItem[] = [
   {
     id: 12,
     title: 'Aasina Maju Dining Experience',
-    category: 'interior',
+    category: 'menus',
     src: '/malaysia/3.png',
     alt: 'Inside Restoran Aasina Maju',
     caption: '3rd Branch opened in 2024 — Kampung Indai, Tuaran.',
@@ -100,7 +100,7 @@ export const galleryItems: GalleryItem[] = [
   {
     id: 13,
     title: 'Aasina Cafe Atmosphere',
-    category: 'interior',
+    category: 'menus',
     src: '/malaysia/4.png',
     alt: 'Inside Restoren Aasina Cafe',
     caption: '4th Branch opened in 2025 — casual Malaysian cafe dining.',
@@ -108,7 +108,7 @@ export const galleryItems: GalleryItem[] = [
   {
     id: 14,
     title: 'Freshly Prepared Table Spread',
-    category: 'interior',
+    category: 'menus',
     src: '/malaysia/5.png',
     alt: 'Full meal spread at Aasina Curry House',
     caption: 'Everyday Malaysian flavours for the whole family.',
@@ -116,7 +116,7 @@ export const galleryItems: GalleryItem[] = [
   {
     id: 15,
     title: 'Stuffed Murtabak Close-Up',
-    category: 'interior',
+    category: 'menus',
     src: '/malaysia/img.png',
     alt: 'Crispy stuffed murtabak',
     caption: 'Golden stuffed murtabak grilled to order.',
@@ -124,7 +124,7 @@ export const galleryItems: GalleryItem[] = [
   {
     id: 16,
     title: 'Nasi Biryani',
-    category: 'interior',
+    category: 'menus',
     src: '/malaysia/6.png',
     alt: 'Nasi Biryani',
     caption: 'Fragrant spiced rice layered with tender meats and fried onions, served with cooling raita.',
