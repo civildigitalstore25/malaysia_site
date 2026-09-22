@@ -3,7 +3,7 @@ import type { GalleryItem } from '../types';
 export const galleryItems: GalleryItem[] = [
   {
     id: 1,
-    title: 'Aasina Curry House 1st Branch — Taman Satriya',
+    title: 'Restoran Aasina Curry House — Taman Satriya',
     category: 'restaurant',
     src: '/branch/1st_branch.webp',
     alt: 'Restoran Aasina Curry House Taman Satriya Menggatal Kota Kinabalu',
@@ -11,14 +11,38 @@ export const galleryItems: GalleryItem[] = [
   },
   {
     id: 2,
-    title: 'AASINA CURRYHOUSE — Plaza Lemawang 2',
+    title: 'Aasina Curry House 2 — Tuaran Bypass',
     category: 'restaurant',
     src: '/images/tuaran_branch.png',
-    alt: 'AASINA CURRYHOUSE Plaza Lemawang 2 Tuaran Sabah',
+    alt: 'Aasina Curry House 2 Taman Canggih Kota Kinabalu',
     caption: '2nd Branch established in 2023 at Plaza Lemawang 2, Tuaran.',
   },
   {
     id: 3,
+    title: 'Restoran Aasina Maju — Kampung Indai',
+    category: 'restaurant',
+    src: '/branch/3rd_branch.png',
+    alt: 'Restoran Aasina Maju Kampung Indai Tuaran Sabah',
+    caption: '3rd Branch opened in 2024 at Kampung Indai, Tuaran.',
+  },
+  {
+    id: 4,
+    title: 'Restoren Aasina Cafe — Plaza Lemawang 2',
+    category: 'restaurant',
+    src: '/branch/4th_branch.png',
+    alt: 'Restoren Aasina Cafe Plaza Lemawang 2 Tuaran Sabah',
+    caption: '4th Branch opened in 2025 at Plaza Lemawang 2, Tuaran.',
+  },
+  {
+    id: 5,
+    title: 'AASINA CURRYHOUSE — Plaza Lemawang 2',
+    category: 'restaurant',
+    src: '/branch/5th_branch.png',
+    alt: 'AASINA CURRYHOUSE Plaza Lemawang 2 Tuaran Sabah',
+    caption: '5th Branch opened in 2026 at Plaza Lemawang 2, Tuaran.',
+  },
+  {
+    id: 6,
     title: 'Family Dining at Aasina',
     category: 'dining',
     src: '/images/story.png',
@@ -26,7 +50,7 @@ export const galleryItems: GalleryItem[] = [
     caption: 'Warm hospitality and family-friendly Malaysian dining since 2011.',
   },
   {
-    id: 4,
+    id: 7,
     title: 'Roti & Murtabak Fresh Off the Griddle',
     category: 'food',
     src: '/images/roti_murtabak.png',
@@ -34,7 +58,7 @@ export const galleryItems: GalleryItem[] = [
     caption: 'Hand-crafted flatbreads served with house dhal and curry.',
   },
   {
-    id: 5,
+    id: 8,
     title: 'Specialty Malaysian Nasi Goreng',
     category: 'food',
     src: '/images/nasi_goreng.png',
@@ -42,7 +66,7 @@ export const galleryItems: GalleryItem[] = [
     caption: 'Wok-charred fried rice topped with spiced chicken and egg.',
   },
   {
-    id: 6,
+    id: 9,
     title: 'Signature Curries & Specialty Dishes',
     category: 'food',
     src: '/images/specialty_dishes.png',
@@ -50,7 +74,7 @@ export const galleryItems: GalleryItem[] = [
     caption: 'Rich coconut curries and slow-cooked heritage dishes.',
   },
   {
-    id: 7,
+    id: 10,
     title: 'Noodles & Soups',
     category: 'food',
     src: '/images/noodles_soups.png',
@@ -58,7 +82,7 @@ export const galleryItems: GalleryItem[] = [
     caption: 'Spicy broths and silky wok-tossed noodle classics.',
   },
   {
-    id: 8,
+    id: 11,
     title: 'Roti Canai & Curry Feast',
     category: 'food',
     src: '/images/hero.png',
@@ -66,7 +90,7 @@ export const galleryItems: GalleryItem[] = [
     caption: 'Signature flatbreads with fragrant house curries.',
   },
   {
-    id: 9,
+    id: 12,
     title: 'Aasina Maju Dining Experience',
     category: 'interior',
     src: '/malaysia/3.png',
@@ -74,7 +98,7 @@ export const galleryItems: GalleryItem[] = [
     caption: '3rd Branch opened in 2024 — Kampung Indai, Tuaran.',
   },
   {
-    id: 10,
+    id: 13,
     title: 'Aasina Cafe Atmosphere',
     category: 'interior',
     src: '/malaysia/4.png',
@@ -82,7 +106,7 @@ export const galleryItems: GalleryItem[] = [
     caption: '4th Branch opened in 2025 — casual Malaysian cafe dining.',
   },
   {
-    id: 11,
+    id: 14,
     title: 'Freshly Prepared Table Spread',
     category: 'interior',
     src: '/malaysia/5.png',
@@ -90,7 +114,7 @@ export const galleryItems: GalleryItem[] = [
     caption: 'Everyday Malaysian flavours for the whole family.',
   },
   {
-    id: 12,
+    id: 15,
     title: 'Stuffed Murtabak Close-Up',
     category: 'interior',
     src: '/malaysia/img.png',
@@ -98,11 +122,12 @@ export const galleryItems: GalleryItem[] = [
     caption: 'Golden stuffed murtabak grilled to order.',
   },
   {
-    id: 13,
+    id: 16,
     title: 'Nasi Biryani',
     category: 'interior',
     src: '/malaysia/6.png',
     alt: 'Nasi Biryani',
     caption: 'Fragrant spiced rice layered with tender meats and fried onions, served with cooling raita.',
   }
+
 ];
